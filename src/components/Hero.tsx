@@ -92,26 +92,34 @@ export default function Hero() {
       className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-28 sm:pt-36 pb-10 sm:pb-12 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#6D28D9] via-[#7C3AED] to-[#5B21B6] text-white"
     >
       {/* Background Architectural & Luminous Violet Glow on Rich Royal Purple */}
-      <div className="absolute inset-0 -z-20 overflow-hidden bg-[#5B21B6]">
-        {/* Radiant Royal Purple Gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#8B5CF6_0%,#7C3AED_45%,#5B21B6_100%)] opacity-95" />
+      <div className="absolute inset-0 -z-20 overflow-hidden bg-gradient-to-b from-[#4C1D95] via-[#6D28D9] to-[#3B0764]">
+        {/* Radiant Royal Purple Overhead Spotlight */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_70%_at_50%_-15%,rgba(167,139,250,0.5)_0%,rgba(124,58,237,0.3)_45%,rgba(59,7,100,0.8)_85%,transparent_100%)] opacity-95" />
 
-        {/* Subtle Architectural Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(248,247,243,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(248,247,243,0.06)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-70 pointer-events-none" />
+        {/* Central Ambient Aura */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[900px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(196,181,253,0.18)_0%,rgba(124,58,237,0.1)_45%,transparent_75%)] pointer-events-none" />
 
-        {/* Safe Ambient Glow (Zero WebKit GPU memory overhead) */}
+        {/* Subtle Luxury Architectural Grid with Soft Vignette Mask */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_40%,transparent_100%)] opacity-80 pointer-events-none" />
+
+        {/* Floating Ambient Light Corona 1 (Top Right) */}
         <div
-          className="absolute -top-20 -right-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(196,181,253,0.45)_0%,rgba(167,139,250,0.25)_50%,transparent_75%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -top-16 -right-16 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(237,233,254,0.32)_0%,rgba(167,139,250,0.22)_40%,rgba(109,40,217,0.1)_65%,transparent_80%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * 35}px, ${mousePos.y * 35}px, 0)`
           }}
         />
+
+        {/* Floating Ambient Light Corona 2 (Bottom Left) */}
         <div
-          className="absolute bottom-10 -left-20 h-[450px] w-[450px] rounded-full bg-[radial-gradient(circle,rgba(221,214,254,0.35)_0%,rgba(139,92,246,0.2)_50%,transparent_75%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -bottom-20 -left-16 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(221,214,254,0.28)_0%,rgba(139,92,246,0.18)_45%,transparent_75%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * -25}px, ${mousePos.y * -25}px, 0)`
           }}
         />
+
+        {/* Subtle Horizontal Light Horizon Accent */}
+        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C4B5FD]/20 to-transparent pointer-events-none" />
       </div>
 
       {/* Top Telemetry Strip */}
@@ -138,12 +146,15 @@ export default function Hero() {
           >
             <div className="space-y-4 sm:space-y-6">
               {/* Oversized High-Impact Headline in Warm Off-White / Violet */}
-              <h1 className="font-display text-[2.75rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#FFFFFF] leading-[0.92] drop-shadow-sm">
-                WE MAKE <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE] drop-shadow-md">
+              <h1 className="font-display text-[3.25rem] xs:text-[4.2rem] sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#FFFFFF] leading-[0.88] sm:leading-[0.92] drop-shadow-sm">
+                <span className="block sm:inline">WE </span>
+                <span className="block sm:inline">MAKE</span>{" "}
+                <br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE] drop-shadow-md block sm:inline">
                   BRANDS
-                </span> <br />
-                MOVE.
+                </span>{" "}
+                <br className="hidden sm:block" />
+                <span className="block sm:inline">MOVE.</span>
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg lg:text-xl text-[#EDE9FE]/90 leading-relaxed font-sans font-normal pt-1 sm:pt-2">
