@@ -19,7 +19,7 @@ export default function ServicesPage() {
       {/* Dynamic Background Atmosphere that reacts to active service */}
       <div className="fixed inset-0 pointer-events-none -z-10 transition-all duration-700">
         <div
-          className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[180px] transition-all duration-700 opacity-40 bg-[#3B155F]"
+          className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(59,21,95,0.6)_0%,transparent_70%)] opacity-60 pointer-events-none"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(118,80,168,0.15),transparent_60%)]" />
       </div>

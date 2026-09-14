@@ -5,21 +5,23 @@ import { Sparkles, Aperture, Flame } from "lucide-react";
 
 export default function BrandStatement() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const visible = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height * 0.6)));
-      setScrollProgress(visible);
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   const lines = [
@@ -33,15 +35,11 @@ export default function BrandStatement() {
     <section
       id="statement"
       ref={containerRef}
-      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 overflow-hidden bg-[#F8F7F3] text-[#100817] border-y border-[#7650A8]/15 transition-colors duration-1000"
+      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 overflow-hidden bg-[#F8F7F3] text-[#100817] border-y border-[#7650A8]/15"
     >
-      {/* Background ambient lighting in soft lavender */}
+      {/* Background ambient lighting in soft lavender (pure radial-gradient, 0% GPU blur overhead) */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[900px] rounded-full bg-[#7650A8]/10 blur-[180px] pointer-events-none transition-all duration-700"
-        style={{
-          opacity: 0.4 + scrollProgress * 0.6,
-          transform: `translate(-50%, -50%) scale(${0.8 + scrollProgress * 0.4})`
-        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(118,80,168,0.15)_0%,transparent_70%)] pointer-events-none"
       />
 
       <div className="w-full max-w-7xl mx-auto relative z-10">
@@ -63,20 +61,20 @@ export default function BrandStatement() {
         {/* Massive Kinetic Editorial Typography in Deep Purple */}
         <div className="space-y-3 sm:space-y-4">
           {lines.map((line, idx) => {
-            const threshold = (idx + 1) / (lines.length + 1);
-            const isActive = scrollProgress >= threshold * 0.65;
+            const isActive = isInView;
 
             return (
               <div key={idx} className="overflow-hidden">
                 <h2
+                  style={{ transitionDelay: `${idx * 100}ms` }}
                   className={`font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[0.95] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     line.highlight
                       ? isActive
                         ? "text-transparent bg-clip-text bg-gradient-to-r from-[#3B155F] via-[#54227A] to-[#7650A8] translate-y-0 opacity-100"
-                        : "text-[#3B155F]/15 translate-y-8 opacity-25"
+                        : "text-[#3B155F]/20 translate-y-6 opacity-30"
                       : isActive
                       ? "text-[#2A0D45] translate-y-0 opacity-100"
-                      : "text-[#2A0D45]/15 translate-y-8 opacity-25"
+                      : "text-[#2A0D45]/20 translate-y-6 opacity-30"
                   }`}
                 >
                   {line.text}

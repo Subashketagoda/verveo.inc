@@ -19,7 +19,7 @@ export default function CustomCursor() {
 
     const onMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
 
       const target = e.target as HTMLElement | null;
       if (!target) return;
@@ -42,7 +42,7 @@ export default function CustomCursor() {
     const onMouseLeave = () => setIsVisible(false);
     const onMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     document.addEventListener("mouseleave", onMouseLeave);
     document.addEventListener("mouseenter", onMouseEnter);
 
@@ -51,7 +51,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("mouseenter", onMouseEnter);
     };
-  }, [isVisible]);
+  }, []);
 
   if (isMobile || !isVisible) return null;
 

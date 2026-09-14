@@ -171,24 +171,13 @@ export default function InstagramSection() {
             >
               {/* Media Preview */}
               <div className="relative aspect-square w-full overflow-hidden bg-[#F8F7F3]">
-                {post.videoUrl ? (
-                  <video
-                    src={post.videoUrl}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                ) : (
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                )}
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
 
                 {/* Badges */}
                 <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
@@ -197,9 +186,9 @@ export default function InstagramSection() {
                       {post.badge}
                     </span>
                   )}
-                  {post.type === "reel" && !post.videoUrl && (
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#100817]/80 text-white backdrop-blur-md border border-[#7650A8]/30">
-                      <Play className="h-4 w-4 fill-current ml-0.5" />
+                  {(post.type === "reel" || post.videoUrl) && (
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#100817]/85 text-white backdrop-blur-md border border-[#7650A8]/30 shadow-md">
+                      <Play className="h-4 w-4 fill-current ml-0.5 text-[#7650A8]" />
                     </div>
                   )}
                 </div>

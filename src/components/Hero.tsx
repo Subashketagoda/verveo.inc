@@ -64,6 +64,9 @@ export default function Hero() {
   const [activeShowcase, setActiveShowcase] = useState(0);
 
   useEffect(() => {
+    // Disable mousemove parallax on touch/mobile to prevent mobile Safari crashes
+    if (typeof window !== "undefined" && (window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches)) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
       const x = (e.clientX / innerWidth - 0.5) * 2;
@@ -71,7 +74,7 @@ export default function Hero() {
       setMousePos({ x, y });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
@@ -94,17 +97,17 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#54227A_0%,#3B155F_60%,#2A0D45_100%)] opacity-90" />
 
         {/* Subtle Architectural Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(248,247,243,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(248,247,243,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(248,247,243,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(248,247,243,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-60 pointer-events-none" />
 
-        {/* Dynamic Interactive Purple Glow Orbs following mouse */}
+        {/* Safe Ambient Glow (Zero WebKit GPU memory overhead) */}
         <div
-          className="absolute -top-20 -right-20 h-[550px] w-[550px] rounded-full bg-[#7650A8]/25 blur-[150px] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -top-20 -right-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(118,80,168,0.3)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * 35}px, ${mousePos.y * 35}px, 0)`
           }}
         />
         <div
-          className="absolute bottom-10 -left-20 h-[450px] w-[450px] rounded-full bg-[#54227A]/40 blur-[140px] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute bottom-10 -left-20 h-[450px] w-[450px] rounded-full bg-[radial-gradient(circle,rgba(84,34,122,0.4)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * -25}px, ${mousePos.y * -25}px, 0)`
           }}
@@ -184,7 +187,7 @@ export default function Hero() {
           {/* Architectural Luxury Showcase of Real Verveo Work (Col 8-12) */}
           <div className="lg:col-span-5 relative w-full flex flex-col items-center">
             {/* Ambient Background Aura */}
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#54227A]/30 to-[#7650A8]/20 blur-2xl -z-10" />
+            <div className="absolute -inset-6 rounded-3xl bg-[radial-gradient(circle,rgba(84,34,122,0.45)_0%,transparent_70%)] -z-10" />
 
             {/* Main Stage Card */}
             <div className="relative w-full max-w-lg aspect-4/5 sm:aspect-1/1 lg:aspect-4/5 rounded-3xl overflow-hidden border border-[#7650A8]/40 bg-[#2A0D45] shadow-[0_30px_70px_rgba(16,8,23,0.85)] group">

@@ -146,9 +146,9 @@ export default function Navbar() {
         }`}
         style={{ minHeight: "100dvh" }}
       >
-        {/* Ambient Violet Glow */}
-        <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full bg-[#54227A]/25 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-10 left-0 w-64 h-64 rounded-full bg-[#3B155F]/20 blur-[100px] pointer-events-none" />
+        {/* Ambient Violet Glow (radial-gradient, 0% blur overhead) */}
+        <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full bg-[radial-gradient(circle,rgba(84,34,122,0.4)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute bottom-10 left-0 w-64 h-64 rounded-full bg-[radial-gradient(circle,rgba(59,21,95,0.35)_0%,transparent_70%)] pointer-events-none" />
 
         {/* Top Header inside Overlay for Seamless Close Flow */}
         <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-[#7650A8]/15 relative z-10">

@@ -88,9 +88,9 @@ export default function Disciplines() {
       id="disciplines"
       className="relative w-full py-24 sm:py-32 lg:py-40 bg-[#3B155F] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden select-none"
     >
-      {/* Background ambient lighting in purple */}
-      <div className="absolute top-1/4 -right-24 h-96 w-96 rounded-full bg-[#54227A]/35 blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-24 h-96 w-96 rounded-full bg-[#7650A8]/25 blur-[160px] pointer-events-none" />
+      {/* Background ambient lighting in purple (radial-gradient, 0% blur overhead) */}
+      <div className="absolute top-1/4 -right-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(84,34,122,0.4)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 -left-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(118,80,168,0.3)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
         {/* Magazine Header Meta */}

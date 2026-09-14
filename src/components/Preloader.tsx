@@ -82,8 +82,8 @@ export default function Preloader() {
     >
       {/* Deep Near-Black Background */}
       <div className="absolute inset-0 bg-[#080509]">
-        {/* Soft centered purple ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[#3B155F]/35 blur-[120px] pointer-events-none" />
+        {/* Soft centered purple ambient glow (radial-gradient, 0% blur overhead) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(59,21,95,0.6)_0%,transparent_70%)] pointer-events-none" />
       </div>
 
       {/* Clean Minimalist Centerpiece */}
@@ -92,7 +92,7 @@ export default function Preloader() {
           
           {/* VE® Emblem with subtle violet halo */}
           <div className="relative h-20 w-20 sm:h-24 sm:w-24">
-            <div className="absolute inset-0 rounded-full bg-[#7650A8]/25 blur-xl animate-pulse" />
+            <div className="absolute -inset-2 rounded-full bg-[radial-gradient(circle,rgba(118,80,168,0.4)_0%,transparent_70%)] animate-pulse" />
             <Image
               src="/images/ve_logo.svg"
               alt="VERVEO"
