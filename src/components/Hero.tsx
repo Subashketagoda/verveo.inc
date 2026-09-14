@@ -89,7 +89,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-28 sm:pt-36 pb-10 sm:pb-12 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#6D28D9] via-[#7C3AED] to-[#5B21B6] text-white"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-20 sm:pt-24 pb-8 sm:pb-10 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#6D28D9] via-[#7C3AED] to-[#5B21B6] text-white"
     >
       {/* Background Architectural & Luminous Violet Glow on Rich Royal Purple */}
       <div className="absolute inset-0 -z-20 overflow-hidden bg-gradient-to-b from-[#4C1D95] via-[#6D28D9] to-[#3B0764]">
@@ -161,7 +161,7 @@ export default function Hero() {
       </div>
 
       {/* Main Asymmetric Editorial Hero Content */}
-      <div className="w-full max-w-7xl mx-auto my-auto py-8 sm:py-10 lg:py-16">
+      <div className="w-full max-w-7xl mx-auto pt-2 sm:pt-4 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           
           {/* Main Huge Typography Headline (Col 1-7) */}
