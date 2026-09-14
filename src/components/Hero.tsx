@@ -183,16 +183,14 @@ export default function Hero() {
             }}
           >
             <div className="space-y-4 sm:space-y-6">
-              {/* Oversized High-Impact Headline in Warm Off-White / Violet */}
-              <h1 className="font-display text-[3.25rem] xs:text-[4.2rem] sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#FFFFFF] leading-[0.88] sm:leading-[0.92] drop-shadow-sm">
-                <span className="block sm:inline">WE </span>
-                <span className="block sm:inline">MAKE</span>{" "}
-                <br className="hidden sm:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE] drop-shadow-md block sm:inline">
+              {/* Oversized High-Impact Editorial Headline */}
+              <h1 className="font-display text-[4rem] xs:text-[4.85rem] sm:text-[6rem] md:text-8xl lg:text-[7.25rem] xl:text-[8.5rem] font-black tracking-tighter text-[#FFFFFF] leading-[0.84] drop-shadow-md select-none">
+                <span className="block">WE</span>
+                <span className="block">MAKE</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE] drop-shadow-lg">
                   BRANDS
-                </span>{" "}
-                <br className="hidden sm:block" />
-                <span className="block sm:inline">MOVE.</span>
+                </span>
+                <span className="block">MOVE.</span>
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg lg:text-xl text-[#EDE9FE]/90 leading-relaxed font-sans font-normal pt-1 sm:pt-2">
