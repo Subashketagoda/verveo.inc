@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 interface HeroShowcaseItem {
   id: string;
@@ -115,18 +115,8 @@ export default function Hero() {
       </div>
 
       {/* Top Telemetry Strip */}
-      <div className="w-full max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-grotesk tracking-widest text-[#EDE9FE]/80 uppercase pt-2">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#C4B5FD]/40 bg-[#4C1D95]/80 px-3 py-1.5 shadow-md backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C4B5FD] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DDD6FE]"></span>
-          </span>
-          <span className="text-white font-semibold tracking-wider text-[10px] sm:text-[11px]">
-            CREATIVE MARKETING AGENCY &bull; COMMISSIONS OPEN 2026
-          </span>
-        </div>
-
-        <div className="hidden sm:flex items-center gap-6 text-[11px]">
+      <div className="w-full max-w-7xl mx-auto hidden sm:flex items-center justify-end text-xs font-grotesk tracking-widest text-[#EDE9FE]/80 uppercase pt-2">
+        <div className="flex items-center gap-6 text-[11px]">
           <span className="text-[#DDD6FE] font-bold tracking-wider">
             YOUR BRAND. OUR VISION. UNFORGETTABLE.
           </span>
@@ -147,12 +137,6 @@ export default function Hero() {
             }}
           >
             <div className="space-y-4 sm:space-y-6">
-              {/* Subtitle Badge Pill */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#C4B5FD]/40 bg-[#4C1D95]/70 px-4 py-1.5 text-xs sm:text-sm font-mono tracking-widest text-[#EDE9FE] uppercase backdrop-blur-md shadow-[0_4px_15px_rgba(109,40,217,0.3)]">
-                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#DDD6FE]" />
-                <span>THE DIGITAL MANIFESTATION</span>
-              </div>
-
               {/* Oversized High-Impact Headline in Warm Off-White / Violet */}
               <h1 className="font-display text-[2.75rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#FFFFFF] leading-[0.92] drop-shadow-sm">
                 WE MAKE <br />
