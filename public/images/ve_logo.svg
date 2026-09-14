@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="purpleBg" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="45%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#7C3AED" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#purpleBg)"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <!-- "VE" Letters in bold compressed modern grotesque -->
+  <g fill="#FFFFFF" filter="url(#softGlow)">
+    <!-- V -->
+    <path d="M 44 62 L 68 138 L 84 138 L 106 62 L 87 62 L 76 108 L 63 62 Z"/>
+    <!-- E -->
+    <path d="M 108 62 L 108 138 L 148 138 L 148 122 L 128 122 L 128 106 L 144 106 L 144 92 L 128 92 L 128 78 L 147 78 L 147 62 Z"/>
+    <!-- ® Registered mark -->
+    <circle cx="162" cy="72" r="9" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M 158 66 L 158 78 M 158 66 L 162 66 C 165 66 165 71 162 71 L 158 71 M 161 71 L 165 78" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
