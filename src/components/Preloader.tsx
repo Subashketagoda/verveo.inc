@@ -1,65 +1,70 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);
   const [stage, setStage] = useState<"loading" | "ready" | "exit" | "hidden">("loading");
+  const hasFinishedRef = useRef(false);
 
   useEffect(() => {
-    // If already seen in this session, skip entirely for instant mobile/desktop browsing
-    try {
-      if (sessionStorage.getItem("verveo_preloader_seen") === "true") {
-        setStage("hidden");
-        return;
-      }
-    } catch {
-      // Ignore if sessionStorage is disabled/restricted
-    }
-
+    // Exact 3.0 seconds loading time as requested by user
+    const TOTAL_LOADING_TIME = 3000;
     const startTime = performance.now();
-    // Ultra-snappy on mobile (650ms) and brisk on desktop (950ms)
-    const isMobileDevice = typeof window !== "undefined" && (window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches);
-    const TOTAL_LOADING_TIME = isMobileDevice ? 650 : 950;
 
+    const finishLoading = () => {
+      if (hasFinishedRef.current) return;
+      hasFinishedRef.current = true;
+
+      setProgress(100);
+      setStage("ready");
+
+      setTimeout(() => {
+        setStage("exit");
+        setTimeout(() => {
+          setStage("hidden");
+        }, 400);
+      }, 100);
+    };
+
+    // Smooth 60fps progress update
+    let animId: number;
     const frame = () => {
+      if (hasFinishedRef.current) return;
+
       const elapsed = performance.now() - startTime;
       const t = Math.min(elapsed / TOTAL_LOADING_TIME, 1);
 
-      // Smooth fast ease-out
-      const easeProgress = Math.floor((1 - Math.pow(1 - t, 2.5)) * 100);
-      setProgress(easeProgress);
+      // Smooth easing curve reaching 100% precisely at 3 seconds
+      const currentProgress = Math.min(Math.floor(t * 100), 99);
+      setProgress(currentProgress);
 
       if (t < 1) {
-        requestAnimationFrame(frame);
+        animId = requestAnimationFrame(frame);
       } else {
-        setProgress(100);
-        setStage("ready");
-
-        try {
-          sessionStorage.setItem("verveo_preloader_seen", "true");
-        } catch {}
-
-        setTimeout(() => {
-          setStage("exit");
-          setTimeout(() => {
-            setStage("hidden");
-          }, 450);
-        }, 80);
+        finishLoading();
       }
     };
 
-    const animId = requestAnimationFrame(frame);
-    return () => cancelAnimationFrame(animId);
+    animId = requestAnimationFrame(frame);
+
+    // Guaranteed hard fallback: mobile browser throttle protection
+    const fallbackTimer = setTimeout(() => {
+      finishLoading();
+    }, TOTAL_LOADING_TIME + 50);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      clearTimeout(fallbackTimer);
+    };
   }, []);
 
   const handleSkip = () => {
-    try {
-      sessionStorage.setItem("verveo_preloader_seen", "true");
-    } catch {}
+    if (hasFinishedRef.current && stage === "hidden") return;
+    hasFinishedRef.current = true;
     setStage("exit");
-    setTimeout(() => setStage("hidden"), 300);
+    setTimeout(() => setStage("hidden"), 200);
   };
 
   if (stage === "hidden") return null;
@@ -69,15 +74,16 @@ export default function Preloader() {
   return (
     <div
       onClick={handleSkip}
-      className={`fixed inset-0 z-[9999] cursor-pointer select-none transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] ${
-        isExiting ? "opacity-0 -translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
+      className={`fixed inset-0 z-[9999] cursor-pointer select-none transition-all duration-400 ease-out ${
+        isExiting ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
+      style={{ touchAction: "manipulation" }}
       title="Tap to enter"
     >
-      {/* Deep Near-Black Velvet Background */}
+      {/* Deep Near-Black Background */}
       <div className="absolute inset-0 bg-[#080509]">
         {/* Soft centered purple ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-[#3B155F]/35 blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[#3B155F]/35 blur-[120px] pointer-events-none" />
       </div>
 
       {/* Clean Minimalist Centerpiece */}
@@ -85,13 +91,14 @@ export default function Preloader() {
         <div className="flex flex-col items-center text-center space-y-5 max-w-xs w-full">
           
           {/* VE® Emblem with subtle violet halo */}
-          <div className="relative h-18 w-18 sm:h-22 sm:w-22">
-            <div className="absolute inset-0 rounded-full bg-[#7650A8]/20 blur-xl animate-pulse" />
+          <div className="relative h-20 w-20 sm:h-24 sm:w-24">
+            <div className="absolute inset-0 rounded-full bg-[#7650A8]/25 blur-xl animate-pulse" />
             <Image
               src="/images/ve_logo.svg"
               alt="VERVEO"
               fill
-              className="object-contain drop-shadow-[0_0_20px_rgba(118,80,168,0.5)]"
+              sizes="96px"
+              className="object-contain drop-shadow-[0_0_25px_rgba(118,80,168,0.6)]"
               priority
             />
           </div>
@@ -105,16 +112,16 @@ export default function Preloader() {
           </div>
 
           {/* Ultra-Slim Progress Line */}
-          <div className="w-44 sm:w-52 space-y-2 pt-1">
+          <div className="w-48 sm:w-56 space-y-2 pt-2">
             <div className="h-[2px] w-full bg-[#2A0D45] rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[#54227A] via-[#7650A8] to-[#FFFFFF] transition-all duration-75 ease-out shadow-[0_0_10px_#7650A8]"
+                className="h-full bg-gradient-to-r from-[#54227A] via-[#7650A8] to-[#FFFFFF] transition-[width] duration-100 ease-linear shadow-[0_0_10px_#7650A8]"
                 style={{ width: `${progress}%` }}
               />
             </div>
 
             {/* Percentage Indicator */}
-            <div className="flex items-center justify-between text-[11px] font-mono text-[#F8F7F3]/50">
+            <div className="flex items-center justify-between text-[11px] font-mono text-[#F8F7F3]/60">
               <span className="tracking-widest">LOADING</span>
               <span className="text-[#7650A8] font-bold">{progress}%</span>
             </div>
