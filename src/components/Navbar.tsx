@@ -16,16 +16,46 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOverLightBg, setIsOverLightBg] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollAndTheme = () => {
       setScrolled(window.scrollY > 30);
+
+      if (pathname !== "/") {
+        setIsOverLightBg(false);
+        return;
+      }
+
+      // Check if current header position intersects with any light-background section
+      const lightSectionSelectors = ["#statement", "#services", "#about", "#instagram"];
+      const headerCheckY = 70; // 70px from top of viewport
+
+      let overLight = false;
+      for (const selector of lightSectionSelectors) {
+        const el = document.querySelector(selector);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= headerCheckY && rect.bottom >= headerCheckY) {
+            overLight = true;
+            break;
+          }
+        }
+      }
+
+      setIsOverLightBg(overLight);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    handleScrollAndTheme();
+    window.addEventListener("scroll", handleScrollAndTheme, { passive: true });
+    window.addEventListener("resize", handleScrollAndTheme, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScrollAndTheme);
+      window.removeEventListener("resize", handleScrollAndTheme);
+    };
+  }, [pathname]);
 
   // Prevent background scroll and support ESC key
   useEffect(() => {
@@ -59,9 +89,13 @@ export default function Navbar() {
       >
         <nav
           className={`flex w-full max-w-7xl items-center justify-between rounded-full transition-all duration-300 ${
-            scrolled
-              ? "border border-[#7650A8]/30 bg-[#FFFFFF]/95 py-2 px-4 sm:px-6 shadow-[0_12px_36px_rgba(59,21,95,0.16)] backdrop-blur-xl"
-              : "border border-[#7650A8]/25 bg-[#FFFFFF]/90 py-2.5 sm:py-3 px-4 sm:px-6 backdrop-blur-md shadow-[0_8px_30px_rgba(59,21,95,0.12)]"
+            isOverLightBg
+              ? scrolled
+                ? "border border-[#A78BFA]/40 bg-[#4C1D95]/95 py-2 px-4 sm:px-6 shadow-[0_12px_36px_rgba(76,29,149,0.35)] backdrop-blur-xl"
+                : "border border-[#A78BFA]/30 bg-[#4C1D95]/90 py-2.5 sm:py-3 px-4 sm:px-6 backdrop-blur-md shadow-[0_8px_30px_rgba(76,29,149,0.25)]"
+              : scrolled
+                ? "border border-[#7650A8]/30 bg-[#FFFFFF]/95 py-2 px-4 sm:px-6 shadow-[0_12px_36px_rgba(59,21,95,0.16)] backdrop-blur-xl"
+                : "border border-[#7650A8]/25 bg-[#FFFFFF]/90 py-2.5 sm:py-3 px-4 sm:px-6 backdrop-blur-md shadow-[0_8px_30px_rgba(59,21,95,0.12)]"
           }`}
         >
           {/* Left: Brand Monogram & Wordmark */}
@@ -70,7 +104,7 @@ export default function Navbar() {
             className="group flex items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-95"
             aria-label="Verveo Creative Homepage"
           >
-            <div className="relative h-7 w-7 sm:h-8 sm:w-8 overflow-hidden rounded-full shadow-[0_0_12px_rgba(84,34,122,0.35)] transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-7 w-7 sm:h-8 sm:w-8 overflow-hidden rounded-full shadow-[0_0_12px_rgba(124,58,237,0.35)] transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/images/ve_logo.svg"
                 alt="VE®"
@@ -80,9 +114,19 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className="font-display text-xs sm:text-sm md:text-base font-black tracking-[0.2em] text-[#2A0D45] flex items-center">
+            <span
+              className={`font-display text-xs sm:text-sm md:text-base font-black tracking-[0.2em] transition-colors duration-300 flex items-center ${
+                isOverLightBg ? "text-white" : "text-[#2A0D45]"
+              }`}
+            >
               VERVEO
-              <span className="text-[9px] sm:text-[10px] text-[#54227A] ml-0.5 font-sans font-bold">®</span>
+              <span
+                className={`text-[9px] sm:text-[10px] ml-0.5 font-sans font-bold transition-colors duration-300 ${
+                  isOverLightBg ? "text-[#DDD6FE]" : "text-[#54227A]"
+                }`}
+              >
+                ®
+              </span>
             </span>
           </Link>
 
@@ -95,15 +139,31 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 font-grotesk text-xs font-bold tracking-widest transition-colors duration-200 group ${
-                    isActive ? "text-[#54227A]" : "text-[#2A0D45]/75 hover:text-[#54227A]"
+                  className={`relative px-4 py-2 font-grotesk text-xs font-bold tracking-widest transition-colors duration-300 group ${
+                    isOverLightBg
+                      ? isActive
+                        ? "text-white"
+                        : "text-[#DDD6FE]/80 hover:text-white"
+                      : isActive
+                        ? "text-[#54227A]"
+                        : "text-[#2A0D45]/75 hover:text-[#54227A]"
                   }`}
                 >
                   <span className="relative z-10">{link.name}</span>
                   {isActive ? (
-                    <span className="absolute bottom-0.5 left-1/2 h-[2px] w-5 -translate-x-1/2 bg-[#54227A] shadow-[0_0_6px_#54227A] rounded-full" />
+                    <span
+                      className={`absolute bottom-0.5 left-1/2 h-[2px] w-5 -translate-x-1/2 rounded-full transition-all duration-300 ${
+                        isOverLightBg
+                          ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]"
+                          : "bg-[#54227A] shadow-[0_0_6px_#54227A]"
+                      }`}
+                    />
                   ) : (
-                    <span className="absolute bottom-0.5 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-[#7650A8]/60 transition-all duration-200 group-hover:w-4 rounded-full" />
+                    <span
+                      className={`absolute bottom-0.5 left-1/2 h-[2px] w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-4 rounded-full ${
+                        isOverLightBg ? "bg-[#DDD6FE]/70" : "bg-[#7650A8]/60"
+                      }`}
+                    />
                   )}
                 </Link>
               );
@@ -115,7 +175,11 @@ export default function Navbar() {
             {/* Desktop Start a Project */}
             <Link
               href="/contact"
-              className="group relative hidden sm:inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6D28D9] via-[#7C3AED] to-[#6D28D9] px-4 sm:px-5 py-2 sm:py-2.5 font-grotesk text-[11px] sm:text-xs font-bold tracking-wider text-white shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.7)] hover:scale-105 active:scale-95"
+              className={`group relative hidden sm:inline-flex items-center gap-2 overflow-hidden rounded-full px-4 sm:px-5 py-2 sm:py-2.5 font-grotesk text-[11px] sm:text-xs font-bold tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 ${
+                isOverLightBg
+                  ? "bg-white text-[#5B21B6] shadow-[0_0_20px_rgba(255,255,255,0.45)] hover:bg-[#F3E8FF] hover:shadow-[0_0_28px_rgba(255,255,255,0.7)]"
+                  : "bg-gradient-to-r from-[#6D28D9] via-[#7C3AED] to-[#6D28D9] text-white shadow-[0_0_20px_rgba(124,58,237,0.5)] hover:shadow-[0_0_30px_rgba(139,92,246,0.7)]"
+              }`}
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -125,12 +189,24 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Navigation Menu"
-              className="flex items-center gap-2 rounded-full border border-[#7650A8]/30 bg-[#F5EFFB] px-3.5 py-1.5 text-[#2A0D45] md:hidden transition-all duration-200 hover:border-[#7650A8] hover:bg-[#E9DCF7] active:scale-95 shadow-xs"
+              className={`flex items-center gap-2 rounded-full px-3.5 py-1.5 md:hidden transition-all duration-300 active:scale-95 shadow-xs ${
+                isOverLightBg
+                  ? "border border-[#A78BFA]/40 bg-[#3B0764] text-white hover:border-[#DDD6FE] hover:bg-[#5B21B6]"
+                  : "border border-[#7650A8]/30 bg-[#F5EFFB] text-[#2A0D45] hover:border-[#7650A8] hover:bg-[#E9DCF7]"
+              }`}
             >
               <span className="font-mono text-[11px] font-bold tracking-wider">MENU</span>
               <div className="flex flex-col gap-1 w-3.5">
-                <span className="h-[1.5px] w-full bg-[#2A0D45] rounded-full" />
-                <span className="h-[1.5px] w-2.5 bg-[#54227A] rounded-full ml-auto" />
+                <span
+                  className={`h-[1.5px] w-full rounded-full transition-colors duration-300 ${
+                    isOverLightBg ? "bg-white" : "bg-[#2A0D45]"
+                  }`}
+                />
+                <span
+                  className={`h-[1.5px] w-2.5 rounded-full ml-auto transition-colors duration-300 ${
+                    isOverLightBg ? "bg-[#DDD6FE]" : "bg-[#54227A]"
+                  }`}
+                />
               </div>
             </button>
           </div>
