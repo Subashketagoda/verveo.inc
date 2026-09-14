@@ -97,6 +97,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${syne.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} dark scroll-smooth h-full antialiased`}
     >
       <head>
@@ -105,7 +106,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#5B21B6] text-[#F8F7F3] font-sans selection:bg-[#7C3AED] selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-[#5B21B6] text-[#F8F7F3] font-sans selection:bg-[#7C3AED] selection:text-white"
+      >
         <Preloader />
         <CustomCursor />
         <PageTransition>{children}</PageTransition>
