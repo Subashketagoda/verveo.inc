@@ -160,17 +160,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Top Telemetry Strip */}
-      <div className="w-full max-w-7xl mx-auto hidden sm:flex items-center justify-end text-xs font-grotesk tracking-widest text-[#EDE9FE]/80 uppercase pt-2">
-        <div className="flex items-center gap-6 text-[11px]">
-          <span className="text-[#DDD6FE] font-bold tracking-wider">
-            YOUR BRAND. OUR VISION. UNFORGETTABLE.
-          </span>
-          <span className="text-[#C4B5FD]/40">|</span>
-          <span className="text-[#EDE9FE]/80">@VERVEO.INC</span>
-        </div>
-      </div>
-
       {/* Main Asymmetric Editorial Hero Content */}
       <div className="w-full max-w-7xl mx-auto my-auto py-8 sm:py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
