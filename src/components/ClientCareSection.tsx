@@ -94,7 +94,7 @@ export default function ClientCareSection() {
   return (
     <section
       id="client-care"
-      className="relative w-full py-24 sm:py-36 px-4 sm:px-10 lg:px-16 bg-[#3B155F] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden"
+      className="relative w-full py-24 sm:py-36 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#54227A] via-[#48186E] to-[#54227A] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto space-y-10 sm:space-y-12">
         {/* Section Header */}

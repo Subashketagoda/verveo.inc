@@ -6,9 +6,9 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function CtaBanner() {
   return (
-    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center py-28 sm:py-36 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#2A0D45] via-[#3B155F] to-[#100817] border-t border-[#7650A8]/20 overflow-hidden text-center select-none">
+    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center py-28 sm:py-36 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#54227A] via-[#642894] to-[#431966] border-t border-[#7650A8]/25 overflow-hidden text-center select-none">
       {/* Dynamic Purple Gradient Light Movement */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(118,80,168,0.3)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(167,139,250,0.35)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Subtle Noise / Film Grain Overlay */}
       <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />

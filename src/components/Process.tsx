@@ -88,7 +88,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-[#2A0D45] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#4C1D72] via-[#54227A] to-[#431966] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Header */}
@@ -115,7 +115,7 @@ export default function Process() {
         </div>
 
         {/* Step Navigation Pill Selector */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 p-1.5 rounded-2xl border border-[#7650A8]/20 bg-[#100817] mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 p-1.5 rounded-2xl border border-[#7650A8]/30 bg-[#32124D] mb-12">
           {STEPS.map((s, idx) => (
             <button
               key={s.step}
@@ -123,7 +123,7 @@ export default function Process() {
               className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs font-grotesk font-bold tracking-wider transition-all duration-300 ${
                 activeStepIndex === idx
                   ? "bg-[#54227A] text-white shadow-[0_0_20px_rgba(84,34,122,0.6)] scale-100"
-                  : "text-[#F8F7F3]/70 hover:text-white hover:bg-[#3B155F]/60"
+                  : "text-[#F8F7F3]/70 hover:text-white hover:bg-[#54227A]/60"
               }`}
             >
               <span className="font-mono text-[11px] opacity-75">{s.step}</span>
@@ -133,10 +133,10 @@ export default function Process() {
         </div>
 
         {/* Active Stage Detail Panel with Dedicated Visual */}
-        <div className="rounded-3xl border border-[#7650A8]/25 bg-[#100817] p-6 sm:p-10 lg:p-12 shadow-xl transition-all duration-500">
+        <div className="rounded-3xl border border-[#7650A8]/30 bg-[#32124D]/90 p-6 sm:p-10 lg:p-12 shadow-xl transition-all duration-500">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Visual Column */}
-            <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#080509] shadow-lg">
+            <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#200A33] shadow-lg">
               <Image
                 src={activeStep.image}
                 alt={activeStep.name}

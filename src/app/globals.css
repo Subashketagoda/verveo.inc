@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --verveo-deep: #3B155F;
-  --verveo-darker: #2A0D45;
-  --verveo-vibrant: #54227A;
-  --verveo-violet: #7650A8;
+  --verveo-deep: #54227A;
+  --verveo-darker: #431966;
+  --verveo-vibrant: #6D28D9;
+  --verveo-violet: #8B5CF6;
   --verveo-warm-white: #F8F7F3;
   --verveo-white: #FFFFFF;
-  --verveo-near-black: #100817;
-  --verveo-deep-black: #080509;
+  --verveo-near-black: #200A33;
+  --verveo-deep-black: #160724;
 
-  --background: #100817;
+  --background: #200A33;
   --foreground: #F8F7F3;
   --font-display: var(--font-display), 'Syne', sans-serif;
   --font-grotesk: var(--font-grotesk), 'Space Grotesk', sans-serif;

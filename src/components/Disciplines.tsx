@@ -86,11 +86,11 @@ export default function Disciplines() {
   return (
     <section
       id="disciplines"
-      className="relative w-full py-24 sm:py-32 lg:py-40 bg-[#3B155F] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden select-none"
+      className="relative w-full py-24 sm:py-32 lg:py-40 bg-gradient-to-b from-[#54227A] via-[#48186E] to-[#54227A] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden select-none"
     >
       {/* Background ambient lighting in purple (radial-gradient, 0% blur overhead) */}
-      <div className="absolute top-1/4 -right-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(84,34,122,0.4)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-10 -left-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(118,80,168,0.3)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/4 -right-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.45)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 -left-24 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.35)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
         {/* Magazine Header Meta */}
@@ -217,7 +217,7 @@ export default function Disciplines() {
 
           {/* Right Column: Sticky Editorial Showcase Frame (Col 8-12) */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32">
-            <div className="relative rounded-3xl overflow-hidden border border-[#7650A8]/40 bg-[#2A0D45] p-6 shadow-[0_25px_60px_rgba(16,8,23,0.7)] backdrop-blur-xl">
+            <div className="relative rounded-3xl overflow-hidden border border-[#7650A8]/50 bg-[#431966]/90 p-6 shadow-[0_25px_60px_rgba(32,10,51,0.5)] backdrop-blur-xl">
               {/* Top Header inside Frame */}
               <div className="flex items-center justify-between pb-4 border-b border-[#7650A8]/20">
                 <div className="flex items-center gap-2">

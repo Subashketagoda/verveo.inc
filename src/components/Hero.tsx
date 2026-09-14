@@ -89,25 +89,25 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-28 sm:pt-36 pb-10 sm:pb-12 px-4 sm:px-10 lg:px-16 bg-[#3B155F] text-[#F8F7F3]"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-28 sm:pt-36 pb-10 sm:pb-12 px-4 sm:px-10 lg:px-16 bg-[#54227A] text-[#F8F7F3]"
     >
-      {/* Background Architectural & Violet Ambient Glow on Deep Purple */}
-      <div className="absolute inset-0 -z-20 overflow-hidden bg-[#3B155F]">
-        {/* Deep Purple Radial Gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#54227A_0%,#3B155F_60%,#2A0D45_100%)] opacity-90" />
+      {/* Background Architectural & Luminous Violet Glow on Rich Royal Purple */}
+      <div className="absolute inset-0 -z-20 overflow-hidden bg-[#54227A]">
+        {/* Radiant Royal Purple Gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#7C3AED_0%,#54227A_50%,#431966_100%)] opacity-95" />
 
         {/* Subtle Architectural Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(248,247,243,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(248,247,243,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(248,247,243,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(248,247,243,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-70 pointer-events-none" />
 
         {/* Safe Ambient Glow (Zero WebKit GPU memory overhead) */}
         <div
-          className="absolute -top-20 -right-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(118,80,168,0.3)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -top-20 -right-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.35)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * 35}px, ${mousePos.y * 35}px, 0)`
           }}
         />
         <div
-          className="absolute bottom-10 -left-20 h-[450px] w-[450px] rounded-full bg-[radial-gradient(circle,rgba(84,34,122,0.4)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute bottom-10 -left-20 h-[450px] w-[450px] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.4)_0%,transparent_70%)] pointer-events-none transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * -25}px, ${mousePos.y * -25}px, 0)`
           }}

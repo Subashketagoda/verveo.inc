@@ -18,10 +18,10 @@ export default function SocialProof() {
           {STATS.map((stat, i) => (
             <div
               key={i}
-              className="p-6 rounded-2xl border border-[#7650A8]/20 bg-[#2A0D45] flex flex-col justify-between hover:border-[#7650A8]/60 hover:bg-[#3B155F] transition-all shadow-md"
+              className="p-6 rounded-2xl border border-[#7650A8]/30 bg-[#431966]/90 flex flex-col justify-between hover:border-[#7650A8] hover:bg-[#54227A] transition-all shadow-md"
             >
               <div>
-                <div className="font-mono text-3xl sm:text-4xl lg:text-5xl font-black text-[#7650A8] tracking-tight">
+                <div className="font-mono text-3xl sm:text-4xl lg:text-5xl font-black text-[#A78BFA] tracking-tight">
                   {stat.value}
                 </div>
                 <div className="mt-2 font-display text-sm sm:text-base font-bold text-[#FFFFFF]">
@@ -36,10 +36,10 @@ export default function SocialProof() {
         </div>
 
         {/* Quality Standard Banner */}
-        <div className="relative overflow-hidden rounded-3xl border border-[#7650A8]/30 bg-gradient-to-r from-[#2A0D45] via-[#3B155F] to-[#2A0D45] p-8 sm:p-12 shadow-lg">
+        <div className="relative overflow-hidden rounded-3xl border border-[#7650A8]/35 bg-gradient-to-r from-[#54227A] via-[#642894] to-[#54227A] p-8 sm:p-12 shadow-lg">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
-              <div className="flex items-center gap-2 text-[#7650A8] text-xs font-mono font-bold tracking-widest uppercase">
+              <div className="flex items-center gap-2 text-[#C4B5FD] text-xs font-mono font-bold tracking-widest uppercase">
                 <Sparkles className="h-4 w-4" />
                 <span>UNCOMPROMISING PRODUCTION STANDARD</span>
               </div>
@@ -52,7 +52,7 @@ export default function SocialProof() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="rounded-xl border border-[#7650A8]/30 bg-[#100817] px-5 py-3 shadow-md">
+              <div className="rounded-xl border border-[#7650A8]/30 bg-[#32124D] px-5 py-3 shadow-md">
                 <div className="flex items-center gap-1 text-[#7650A8] mb-1">
                   {[...Array(5)].map((_, idx) => (
                     <Star key={idx} className="h-3.5 w-3.5 fill-current" />

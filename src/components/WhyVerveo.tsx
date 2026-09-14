@@ -49,7 +49,7 @@ export default function WhyVerveo() {
   return (
     <section
       id="why"
-      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-[#100817] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#4C1D72] via-[#54227A] to-[#431966] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Pill */}
@@ -83,14 +83,14 @@ export default function WhyVerveo() {
             return (
               <div
                 key={item.number}
-                className="group relative overflow-hidden rounded-2xl border border-[#7650A8]/20 bg-[#2A0D45] p-8 transition-all duration-500 hover:border-[#7650A8]/60 hover:bg-[#3B155F] hover:shadow-[0_20px_40px_rgba(59,21,95,0.4)]"
+                className="group relative overflow-hidden rounded-2xl border border-[#7650A8]/30 bg-[#431966]/90 p-8 transition-all duration-500 hover:border-[#7650A8] hover:bg-[#54227A] hover:shadow-[0_20px_40px_rgba(84,34,122,0.4)]"
               >
                 {/* Top Number & Metric */}
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-3xl font-extrabold text-[#7650A8]">
                     {item.number}
                   </span>
-                  <span className="rounded-full border border-[#7650A8]/30 bg-[#100817] px-3 py-1 text-[11px] font-mono text-[#F8F7F3]/80">
+                  <span className="rounded-full border border-[#7650A8]/30 bg-[#32124D] px-3 py-1 text-[11px] font-mono text-[#F8F7F3]/80">
                     {item.metric}
                   </span>
                 </div>

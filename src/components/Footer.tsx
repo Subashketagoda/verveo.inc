@@ -32,7 +32,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full bg-[#080509] text-[#F8F7F3]/70 border-t border-[#7650A8]/20 pt-16 sm:pt-20 pb-12 px-4 sm:px-10 lg:px-16 overflow-hidden">
+    <footer className="relative w-full bg-gradient-to-b from-[#2A0D45] to-[#1A082B] text-[#F8F7F3]/80 border-t border-[#7650A8]/25 pt-16 sm:pt-20 pb-12 px-4 sm:px-10 lg:px-16 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto space-y-16">
         {/* Top Footer Navigation Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-[#7650A8]/20 pb-16">
