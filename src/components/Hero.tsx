@@ -146,21 +146,21 @@ export default function Hero() {
               transform: `translate3d(${mousePos.x * -8}px, ${mousePos.y * -8}px, 0)`
             }}
           >
-            <div className="inline-flex items-center gap-2.5 text-xs font-grotesk tracking-[0.3em] text-[#7650A8] uppercase font-bold">
-              <Sparkles className="h-3.5 w-3.5 text-[#7650A8]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#100817]/70 border border-[#7650A8]/40 px-3.5 py-1.5 text-xs sm:text-sm font-grotesk tracking-[0.2em] text-[#C4B5FD] uppercase font-bold shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#A78BFA]" />
               <span>THE DIGITAL MANIFESTATION</span>
             </div>
 
-            {/* Oversized Headline in Warm Off-White / Violet */}
-            <h1 className="font-display text-4xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#F8F7F3] leading-[0.94] sm:leading-[0.92]">
+            {/* Oversized High-Impact Headline in Warm Off-White / Violet */}
+            <h1 className="font-display text-[2.75rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black tracking-tight text-[#F8F7F3] leading-[0.92] drop-shadow-sm">
               WE MAKE <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F8F7F3] to-[#7650A8] drop-shadow-md">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F8F7F3] to-[#A78BFA] drop-shadow-md">
                 BRANDS
               </span> <br />
               MOVE.
             </h1>
 
-            <p className="max-w-xl text-sm sm:text-lg lg:text-xl text-[#F8F7F3]/85 leading-relaxed font-sans font-light pt-1 sm:pt-2">
+            <p className="max-w-xl text-base sm:text-lg lg:text-xl text-[#F8F7F3]/90 leading-relaxed font-sans font-normal pt-1 sm:pt-2">
               From designing living brand identities and physical packaging to directing high-fashion lookbooks, mouth-watering culinary cinema, and cultural media campaigns.
             </p>
 
