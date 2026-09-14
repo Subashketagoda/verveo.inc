@@ -1,7 +1,30 @@
 import type { Metadata } from "next";
+import { Syne, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
+import PageTransition from "@/components/PageTransition";
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-grotesk",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Verveo Creative Inc. | Commercial Cinema, Brand Identity & Media Campaigns",
@@ -66,15 +89,16 @@ const jsonLd = {
   slogan: "Your business doesn't need ads, it needs movies."
 };
 
-import PageTransition from "@/components/PageTransition";
-
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth h-full antialiased">
+    <html
+      lang="en"
+      className={`${syne.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} dark scroll-smooth h-full antialiased`}
+    >
       <head>
         <script
           type="application/ld+json"

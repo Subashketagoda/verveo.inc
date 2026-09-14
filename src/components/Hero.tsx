@@ -193,6 +193,8 @@ export default function Hero() {
                 <video
                   key={heroShowcases[activeShowcase].id}
                   src={heroShowcases[activeShowcase].src}
+                  poster="/user_media/verveo-cafe-1.jpg"
+                  preload="metadata"
                   autoPlay
                   loop
                   muted

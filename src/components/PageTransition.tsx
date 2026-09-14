@@ -6,15 +6,20 @@ import { useEffect, useState } from "react";
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    if (!hasMounted) {
+      setHasMounted(true);
+      return;
+    }
     setIsTransitioning(true);
     const timer = setTimeout(() => {
       setIsTransitioning(false);
-    }, 450);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, [pathname]);
+  }, [pathname, hasMounted]);
 
   return (
     <div className="relative w-full min-h-screen">
