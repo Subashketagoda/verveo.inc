@@ -21,29 +21,29 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full py-24 sm:py-36 lg:py-44 px-4 sm:px-10 lg:px-16 bg-[#2A0D45] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden"
+      className="relative w-full py-24 sm:py-36 lg:py-44 px-4 sm:px-10 lg:px-16 bg-[#F8F7F3] text-[#100817] border-t border-[#7650A8]/20 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#7650A8]/20 pb-8 mb-12 sm:mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">03 // WHAT WE DO</span>
+              <span className="font-mono text-xs text-[#54227A] font-bold">03 // WHAT WE DO</span>
               <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.25em] text-[#F8F7F3]/70 uppercase">
+              <span className="text-xs font-grotesk tracking-[0.25em] text-[#3B155F]/70 uppercase font-semibold">
                 Core Agency Services
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-6xl lg:text-7xl font-black text-[#F8F7F3] tracking-tight leading-[0.96]">
+            <h2 className="font-display text-3xl sm:text-6xl lg:text-7xl font-black text-[#2A0D45] tracking-tight leading-[0.96]">
               SERVICES BUILT <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F8F7F3] to-[#7650A8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B155F] via-[#54227A] to-[#7650A8]">
                 FOR CULTURAL RECALL.
               </span>
             </h2>
           </div>
 
           <div className="max-w-md">
-            <p className="text-sm sm:text-base font-sans text-[#F8F7F3]/75 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base font-sans text-[#2A0D45]/75 leading-relaxed font-normal">
               We operate where brand strategy, tactile packaging, culinary cinema, and high-fashion editorial direction converge into undeniable commercial results.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function Services() {
                 onClick={() => setHoveredIndex(hoveredIndex === idx ? null : idx)}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 className={`group relative py-7 sm:py-12 transition-all duration-300 cursor-pointer ${
-                  isHovered ? "bg-[#3B155F]/60 px-3 sm:px-4 rounded-2xl" : "hover:bg-[#3B155F]/30"
+                  isHovered ? "bg-[#FFFFFF] px-3 sm:px-4 rounded-2xl shadow-[0_10px_30px_rgba(59,21,95,0.08)] border border-[#7650A8]/20" : "hover:bg-[#FFFFFF]/60"
                 }`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
@@ -98,12 +98,12 @@ export default function Services() {
                   <div className="lg:col-span-2 flex items-center gap-3 sm:gap-4">
                     <span
                       className={`font-mono text-xl sm:text-3xl font-bold transition-colors duration-300 ${
-                        isHovered ? "text-[#7650A8]" : "text-[#7650A8]/60"
+                        isHovered ? "text-[#54227A]" : "text-[#7650A8]"
                       }`}
                     >
                       {service.number}
                     </span>
-                    <span className="text-[#7650A8]/30 font-mono">—</span>
+                    <span className="text-[#7650A8]/40 font-mono">—</span>
                   </div>
 
                   {/* Title & Enlarging Typography */}
@@ -111,20 +111,20 @@ export default function Services() {
                     <h3
                       className={`font-display text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight transition-all duration-300 ${
                         isHovered
-                          ? "text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F8F7F3] to-[#7650A8] translate-x-1 sm:translate-x-3"
-                          : "text-[#F8F7F3] group-hover:text-white"
+                          ? "text-[#54227A] translate-x-1 sm:translate-x-3"
+                          : "text-[#2A0D45] group-hover:text-[#54227A]"
                       }`}
                     >
                       {service.title}
                     </h3>
-                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-[#7650A8] font-grotesk italic font-medium">
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-[#54227A] font-grotesk italic font-medium">
                       &ldquo;{service.tagline}&rdquo;
                     </p>
                   </div>
 
                   {/* Short Description */}
                   <div className="lg:col-span-4">
-                    <p className="text-xs sm:text-sm text-[#F8F7F3]/75 leading-relaxed font-sans font-normal">
+                    <p className="text-xs sm:text-sm text-[#2A0D45]/80 leading-relaxed font-sans font-normal">
                       {service.description}
                     </p>
                   </div>
@@ -134,8 +134,8 @@ export default function Services() {
                     <div
                       className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border transition-all duration-300 ${
                         isHovered
-                          ? "border-[#7650A8] bg-[#54227A] text-white shadow-[0_0_25px_rgba(84,34,122,0.6)] scale-110"
-                          : "border-[#7650A8]/20 bg-[#100817] text-[#F8F7F3]/60 group-hover:border-[#7650A8] group-hover:text-white"
+                          ? "border-[#54227A] bg-[#54227A] text-white shadow-[0_0_20px_rgba(84,34,122,0.4)] scale-110"
+                          : "border-[#7650A8]/30 bg-[#FFFFFF] text-[#54227A] group-hover:border-[#54227A] group-hover:bg-[#54227A] group-hover:text-white"
                       }`}
                     >
                       <ArrowUpRight
@@ -169,19 +169,19 @@ export default function Services() {
         </div>
 
         {/* Bottom Commission Direct Action Banner */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-[#7650A8]/20 bg-[#100817]/90 p-6 sm:p-8">
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-[#7650A8]/20 bg-[#FFFFFF] p-6 sm:p-8 shadow-[0_10px_30px_rgba(59,21,95,0.06)]">
           <div>
-            <span className="font-mono text-xs text-[#7650A8] uppercase tracking-widest font-bold">
+            <span className="font-mono text-xs text-[#54227A] uppercase tracking-widest font-bold">
               BESPOKE SCOPES
             </span>
-            <h4 className="font-display text-lg sm:text-xl font-bold text-[#F8F7F3] mt-1">
+            <h4 className="font-display text-lg sm:text-xl font-bold text-[#2A0D45] mt-1">
               Need an integrated cross-discipline campaign?
             </h4>
           </div>
 
           <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#54227A] to-[#7650A8] px-6 py-3 font-grotesk text-xs font-bold tracking-wider text-white shadow-[0_0_20px_rgba(84,34,122,0.5)] hover:scale-105 transition-transform"
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#54227A] to-[#7650A8] px-6 py-3 font-grotesk text-xs font-bold tracking-wider text-white shadow-[0_0_20px_rgba(84,34,122,0.4)] hover:scale-105 transition-transform"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="h-4 w-4" />
