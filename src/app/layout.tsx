@@ -105,7 +105,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#100817] text-[#F8F7F3] font-sans selection:bg-[#54227A] selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#5B21B6] text-[#F8F7F3] font-sans selection:bg-[#7C3AED] selection:text-white">
         <Preloader />
         <CustomCursor />
         <PageTransition>{children}</PageTransition>

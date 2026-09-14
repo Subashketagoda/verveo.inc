@@ -88,42 +88,42 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#4C1D72] via-[#54227A] to-[#431966] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#5B21B6] via-[#6D28D9] to-[#5B21B6] text-white border-t border-[#A78BFA]/30 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#7650A8]/20 pb-8 mb-16 gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#A78BFA]/25 pb-8 mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">06 // THE WORKFLOW</span>
-              <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.25em] text-[#F8F7F3]/60 uppercase">
+              <span className="font-mono text-xs text-[#DDD6FE] font-bold">06 // THE WORKFLOW</span>
+              <span className="text-[#C4B5FD]/40">/</span>
+              <span className="text-xs font-grotesk tracking-[0.25em] text-[#EDE9FE]/80 uppercase">
                 End-to-End Method
               </span>
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl font-black text-[#FFFFFF] tracking-tight">
+            <h2 className="font-display text-4xl sm:text-6xl font-black text-white tracking-tight">
               FROM RAW CONCEPT <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7650A8] via-[#F8F7F3] to-[#7650A8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE]">
                 TO CULTURAL MASTERPIECE.
               </span>
             </h2>
           </div>
 
-          <p className="max-w-md text-sm text-[#F8F7F3]/70 font-sans font-normal leading-relaxed">
+          <p className="max-w-md text-sm text-[#EDE9FE]/85 font-sans font-normal leading-relaxed">
             A battle-tested 5-step creative pipeline that guarantees cinematic excellence on schedule and on budget.
           </p>
         </div>
 
         {/* Step Navigation Pill Selector */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 p-1.5 rounded-2xl border border-[#7650A8]/30 bg-[#32124D] mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 p-1.5 rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95] mb-12">
           {STEPS.map((s, idx) => (
             <button
               key={s.step}
               onClick={() => setActiveStepIndex(idx)}
               className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs font-grotesk font-bold tracking-wider transition-all duration-300 ${
                 activeStepIndex === idx
-                  ? "bg-[#54227A] text-white shadow-[0_0_20px_rgba(84,34,122,0.6)] scale-100"
-                  : "text-[#F8F7F3]/70 hover:text-white hover:bg-[#54227A]/60"
+                  ? "bg-[#7C3AED] text-white shadow-[0_0_20px_rgba(124,58,237,0.6)] scale-100"
+                  : "text-[#EDE9FE]/80 hover:text-white hover:bg-[#6D28D9]"
               }`}
             >
               <span className="font-mono text-[11px] opacity-75">{s.step}</span>
@@ -133,22 +133,22 @@ export default function Process() {
         </div>
 
         {/* Active Stage Detail Panel with Dedicated Visual */}
-        <div className="rounded-3xl border border-[#7650A8]/30 bg-[#32124D]/90 p-6 sm:p-10 lg:p-12 shadow-xl transition-all duration-500">
+        <div className="rounded-3xl border border-[#A78BFA]/35 bg-[#4C1D95]/90 p-6 sm:p-10 lg:p-12 shadow-xl transition-all duration-500">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Visual Column */}
-            <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#200A33] shadow-lg">
+            <div className="lg:col-span-6 relative aspect-16/10 rounded-2xl overflow-hidden border border-[#A78BFA]/30 bg-[#3B0764] shadow-lg">
               <Image
                 src={activeStep.image}
                 alt={activeStep.name}
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/95 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                <span className="font-mono text-xs text-[#7650A8] uppercase tracking-wider font-bold">
+                <span className="font-mono text-xs text-[#DDD6FE] uppercase tracking-wider font-bold">
                   STAGE {activeStep.step} // {activeStep.name}
                 </span>
-                <span className="rounded-full bg-[#2A0D45]/80 px-2.5 py-0.5 text-[10px] font-mono text-[#F8F7F3] backdrop-blur-md border border-[#7650A8]/30">
+                <span className="rounded-full bg-[#3B0764]/80 px-2.5 py-0.5 text-[10px] font-mono text-[#EDE9FE] backdrop-blur-md border border-[#A78BFA]/40">
                   VERVEO METHOD
                 </span>
               </div>
@@ -157,27 +157,27 @@ export default function Process() {
             {/* Narrative Column */}
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-2">
-                <span className="font-mono text-xs text-[#7650A8] uppercase tracking-widest font-bold">
+                <span className="font-mono text-xs text-[#DDD6FE] uppercase tracking-widest font-bold">
                   PHASE {activeStep.step} &bull; {activeStep.subtitle}
                 </span>
-                <h3 className="font-display text-3xl sm:text-4xl font-black text-[#FFFFFF] tracking-tight">
+                <h3 className="font-display text-3xl sm:text-4xl font-black text-white tracking-tight">
                   {activeStep.name}
                 </h3>
               </div>
 
-              <p className="text-base text-[#F8F7F3]/80 font-sans font-normal leading-relaxed">
+              <p className="text-base text-[#EDE9FE]/90 font-sans font-normal leading-relaxed">
                 {activeStep.description}
               </p>
 
               {/* Key Deliverables */}
-              <div className="space-y-3 border-t border-[#7650A8]/20 pt-6">
+              <div className="space-y-3 border-t border-[#A78BFA]/20 pt-6">
                 <span className="font-mono text-xs text-[#FFFFFF] tracking-wider uppercase font-semibold block">
                   KEY DELIVERABLES &bull; STAGE {activeStep.step}
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {activeStep.deliverables.map((del, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-xs text-[#F8F7F3]/80 font-grotesk">
-                      <CheckCircle2 className="h-4 w-4 text-[#7650A8] shrink-0" />
+                    <div key={i} className="flex items-center gap-2.5 text-xs text-[#EDE9FE]/85 font-grotesk">
+                      <CheckCircle2 className="h-4 w-4 text-[#DDD6FE] shrink-0" />
                       <span>{del}</span>
                     </div>
                   ))}

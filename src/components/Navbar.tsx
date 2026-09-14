@@ -115,7 +115,7 @@ export default function Navbar() {
             {/* Desktop Start a Project */}
             <Link
               href="/contact"
-              className="group relative hidden sm:inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#54227A] via-[#7650A8] to-[#54227A] px-4 sm:px-5 py-2 sm:py-2.5 font-grotesk text-[11px] sm:text-xs font-bold tracking-wider text-white shadow-[0_0_20px_rgba(84,34,122,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(118,80,168,0.6)] hover:scale-105 active:scale-95"
+              className="group relative hidden sm:inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6D28D9] via-[#7C3AED] to-[#6D28D9] px-4 sm:px-5 py-2 sm:py-2.5 font-grotesk text-[11px] sm:text-xs font-bold tracking-wider text-white shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.7)] hover:scale-105 active:scale-95"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -257,7 +257,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#54227A] via-[#7650A8] to-[#54227A] py-3.5 font-grotesk text-xs font-bold tracking-wider text-white shadow-[0_4px_20px_rgba(84,34,122,0.4)] active:scale-98 transition-transform"
+              className="flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#6D28D9] via-[#7C3AED] to-[#6D28D9] py-3.5 font-grotesk text-xs font-bold tracking-wider text-white shadow-[0_4px_20px_rgba(124,58,237,0.5)] active:scale-98 transition-transform"
             >
               <span>START A COMMISSION</span>
               <ArrowUpRight className="h-4 w-4" />

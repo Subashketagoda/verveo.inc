@@ -49,28 +49,28 @@ export default function WhyVerveo() {
   return (
     <section
       id="why"
-      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#4C1D72] via-[#54227A] to-[#431966] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 lg:py-44 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-[#5B21B6] via-[#6D28D9] to-[#5B21B6] text-white border-t border-[#A78BFA]/30 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Pill */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#7650A8]/20 pb-8 mb-16 gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#A78BFA]/25 pb-8 mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">05 // THE VERVEO ADVANTAGE</span>
-              <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.25em] text-[#F8F7F3]/60 uppercase">
+              <span className="font-mono text-xs text-[#DDD6FE] font-bold">05 // THE VERVEO ADVANTAGE</span>
+              <span className="text-[#C4B5FD]/40">/</span>
+              <span className="text-xs font-grotesk tracking-[0.25em] text-[#EDE9FE]/80 uppercase">
                 Core Principles
               </span>
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl font-black text-[#FFFFFF] tracking-tight">
+            <h2 className="font-display text-4xl sm:text-6xl font-black text-white tracking-tight">
               WHY FORWARD-THINKING <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7650A8] via-[#F8F7F3] to-[#7650A8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE]">
                 BRANDS CHOOSE VERVEO.
               </span>
             </h2>
           </div>
 
-          <p className="max-w-md text-sm text-[#F8F7F3]/70 font-sans font-normal leading-relaxed">
+          <p className="max-w-md text-sm text-[#EDE9FE]/85 font-sans font-normal leading-relaxed">
             Five principles that govern every shoot, every layout, and every campaign we deliver to the world.
           </p>
         </div>
@@ -83,33 +83,33 @@ export default function WhyVerveo() {
             return (
               <div
                 key={item.number}
-                className="group relative overflow-hidden rounded-2xl border border-[#7650A8]/30 bg-[#431966]/90 p-8 transition-all duration-500 hover:border-[#7650A8] hover:bg-[#54227A] hover:shadow-[0_20px_40px_rgba(84,34,122,0.4)]"
+                className="group relative overflow-hidden rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95]/85 p-8 transition-all duration-500 hover:border-[#DDD6FE] hover:bg-[#6D28D9] hover:shadow-[0_20px_40px_rgba(124,58,237,0.5)]"
               >
                 {/* Top Number & Metric */}
                 <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-3xl font-extrabold text-[#7650A8]">
+                  <span className="font-mono text-3xl font-extrabold text-[#DDD6FE]">
                     {item.number}
                   </span>
-                  <span className="rounded-full border border-[#7650A8]/30 bg-[#32124D] px-3 py-1 text-[11px] font-mono text-[#F8F7F3]/80">
+                  <span className="rounded-full border border-[#A78BFA]/30 bg-[#3B0764] px-3 py-1 text-[11px] font-mono text-[#EDE9FE]">
                     {item.metric}
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#100817] text-[#7650A8] transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#3B0764] text-[#DDD6FE] transition-transform duration-300 group-hover:scale-110">
                   <Icon className="h-6 w-6" />
                 </div>
 
                 {/* Title & Quote */}
-                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-wide text-[#FFFFFF] group-hover:text-[#FFFFFF] transition-colors">
+                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-wide text-white transition-colors">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs font-grotesk text-[#7650A8] italic font-medium">
+                <p className="mt-2 text-xs font-grotesk text-[#DDD6FE] italic font-medium">
                   &ldquo;{item.quote}&rdquo;
                 </p>
 
                 {/* Description */}
-                <p className="mt-4 text-xs sm:text-sm text-[#F8F7F3]/70 leading-relaxed font-sans font-normal">
+                <p className="mt-4 text-xs sm:text-sm text-[#EDE9FE]/85 leading-relaxed font-sans font-normal">
                   {item.description}
                 </p>
               </div>

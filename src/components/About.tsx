@@ -50,14 +50,14 @@ export default function About() {
                 sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 rounded-md bg-[#100817]/80 px-2.5 py-1 text-[10px] font-mono text-[#F8F7F3] border border-[#7650A8]/30 backdrop-blur-md font-semibold">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 rounded-md bg-[#3B0764]/90 px-2.5 py-1 text-[10px] font-mono text-[#DDD6FE] border border-[#A78BFA]/30 backdrop-blur-md font-semibold">
                 SPACES &bull; VERVEO CAFE
               </div>
             </div>
 
             {/* 2. Portraits: Art Exhibition */}
-            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] mt-8 group">
+            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#A78BFA]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] mt-8 group">
               <Image
                 src="/user_media/alata-paintings.jpg"
                 alt="Portrait: Curated Fine Art Exhibition"
@@ -65,14 +65,14 @@ export default function About() {
                 sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 rounded-md bg-[#100817]/80 px-2.5 py-1 text-[10px] font-mono text-[#F8F7F3] border border-[#7650A8]/30 backdrop-blur-md">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 rounded-md bg-[#3B0764]/90 px-2.5 py-1 text-[10px] font-mono text-[#DDD6FE] border border-[#A78BFA]/30 backdrop-blur-md">
                 EXHIBITION &bull; FINE ART
               </div>
             </div>
 
             {/* 3. Editorial & Fashion: Lookbook */}
-            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] -mt-4 group">
+            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#A78BFA]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] -mt-4 group">
               <Image
                 src="/user_media/verveo-coffee-bag.jpg"
                 alt="Packaging: Artisanal Roasted Coffee System"
@@ -80,14 +80,14 @@ export default function About() {
                 sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 rounded-md bg-[#100817]/80 px-2.5 py-1 text-[10px] font-mono text-[#F8F7F3] border border-[#7650A8]/30 backdrop-blur-md">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 rounded-md bg-[#3B0764]/90 px-2.5 py-1 text-[10px] font-mono text-[#DDD6FE] border border-[#A78BFA]/30 backdrop-blur-md">
                 PACKAGING &bull; COFFEE SYSTEM
               </div>
             </div>
 
             {/* 4. BTS: Studio Team Craft */}
-            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#7650A8]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] mt-4 group">
+            <div className="relative aspect-4/5 rounded-2xl overflow-hidden border border-[#A78BFA]/30 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.08)] mt-4 group">
               <Image
                 src="/user_media/verveo-design-team-1.jpg"
                 alt="Behind-The-Scenes: Verveo Design Team Studio Craft"
@@ -95,8 +95,8 @@ export default function About() {
                 sizes="(max-width: 768px) 50vw, 30vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 rounded-md bg-[#100817]/80 px-2.5 py-1 text-[10px] font-mono text-[#F8F7F3] border border-[#7650A8]/30 backdrop-blur-md">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 rounded-md bg-[#3B0764]/90 px-2.5 py-1 text-[10px] font-mono text-[#DDD6FE] border border-[#A78BFA]/30 backdrop-blur-md">
                 BTS &bull; DESIGN TEAM CRAFT
               </div>
             </div>

@@ -142,7 +142,7 @@ export default function InstagramSection() {
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/90 via-[#100817]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 sm:p-8 justify-between">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/90 via-[#3B0764]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 sm:p-8 justify-between">
               <span className="font-display text-base sm:text-lg font-bold text-white tracking-widest uppercase">
                 Synchronized 3-Post Aesthetic Banner
               </span>
@@ -150,7 +150,7 @@ export default function InstagramSection() {
                 href="https://www.instagram.com/verveo.inc/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#7650A8] hover:text-white"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#DDD6FE] hover:text-white"
               >
                 <span>VIEW ON FEED</span>
                 <ArrowUpRight className="h-4 w-4" />
@@ -167,7 +167,7 @@ export default function InstagramSection() {
               href={post.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-3xl border border-[#7650A8]/20 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.06)] transition-all duration-500 hover:border-[#54227A] hover:shadow-[0_20px_40px_rgba(59,21,95,0.12)] flex flex-col"
+              className="group relative overflow-hidden rounded-3xl border border-[#A78BFA]/20 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(59,21,95,0.06)] transition-all duration-500 hover:border-[#7C3AED] hover:shadow-[0_20px_40px_rgba(124,58,237,0.15)] flex flex-col"
             >
               {/* Media Preview */}
               <div className="relative aspect-square w-full overflow-hidden bg-[#F8F7F3]">
@@ -182,21 +182,21 @@ export default function InstagramSection() {
                 {/* Badges */}
                 <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
                   {post.badge && (
-                    <span className="rounded-full border border-[#7650A8]/30 bg-[#100817]/95 px-3 py-1 text-[11px] font-mono font-bold text-[#7650A8] shadow-sm backdrop-blur-md">
+                    <span className="rounded-full border border-[#A78BFA]/40 bg-[#3B0764]/95 px-3 py-1 text-[11px] font-mono font-bold text-[#DDD6FE] shadow-sm backdrop-blur-md">
                       {post.badge}
                     </span>
                   )}
                   {(post.type === "reel" || post.videoUrl) && (
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#100817]/85 text-white backdrop-blur-md border border-[#7650A8]/30 shadow-md">
-                      <Play className="h-4 w-4 fill-current ml-0.5 text-[#7650A8]" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#3B0764]/90 text-white backdrop-blur-md border border-[#A78BFA]/40 shadow-md">
+                      <Play className="h-4 w-4 fill-current ml-0.5 text-[#DDD6FE]" />
                     </div>
                   )}
                 </div>
 
                 {/* Hover Overlay with Likes/Comments */}
-                <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-[#100817]/95 via-[#100817]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-[#3B0764]/95 via-[#3B0764]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex justify-end">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#54227A] text-white shadow-lg">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7C3AED] text-white shadow-lg">
                       <ArrowUpRight className="h-5 w-5" />
                     </div>
                   </div>

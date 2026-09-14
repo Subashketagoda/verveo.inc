@@ -101,24 +101,24 @@ export default function ProcessPage() {
   const currentStage = STAGES[activeStageIdx];
 
   return (
-    <main className="min-h-screen bg-[#100817] text-[#F8F7F3] flex flex-col justify-between overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-b from-[#5B21B6] via-[#6D28D9] to-[#5B21B6] text-[#F8F7F3] flex flex-col justify-between overflow-hidden">
       <Navbar />
 
       {/* Dynamic Ambient Background reacting to current stage */}
       <div className="fixed inset-0 pointer-events-none -z-10 transition-all duration-1000">
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[200px] transition-all duration-1000 opacity-30 bg-[#3B155F]"
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[200px] transition-all duration-1000 opacity-40 bg-[#8B5CF6]/30"
         />
       </div>
 
       <div className="pt-32 sm:pt-44 pb-20 sm:pb-24 px-4 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full space-y-10 sm:space-y-12">
         {/* Header Strip */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#7650A8]/20 pb-6 gap-4 sm:gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#A78BFA]/20 pb-6 gap-4 sm:gap-6">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">METHODOLOGY // 04</span>
-              <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.3em] text-[#F8F7F3]/60 uppercase">
+              <span className="font-mono text-xs text-[#DDD6FE] font-bold">METHODOLOGY // 04</span>
+              <span className="text-[#A78BFA]/40">/</span>
+              <span className="text-xs font-grotesk tracking-[0.3em] text-[#F8F7F3]/70 uppercase">
                 Interactive Scroll Story
               </span>
             </div>
@@ -127,13 +127,13 @@ export default function ProcessPage() {
             </h1>
           </div>
 
-          <div className="text-xs font-mono text-[#7650A8] tracking-widest uppercase font-semibold">
+          <div className="text-xs font-mono text-[#DDD6FE] tracking-widest uppercase font-semibold">
             STAGE {currentStage.number} OF 05
           </div>
         </div>
 
         {/* Vertical / Horizontal Progress Rail */}
-        <div className="grid grid-cols-5 gap-1.5 sm:gap-2 p-1 sm:p-1.5 rounded-2xl border border-[#7650A8]/20 bg-[#100817]">
+        <div className="grid grid-cols-5 gap-1.5 sm:gap-2 p-1 sm:p-1.5 rounded-2xl border border-[#A78BFA]/30 bg-[#4C1D95]/80 backdrop-blur-md">
           {STAGES.map((stage, idx) => {
             const isActive = activeStageIdx === idx;
 
@@ -143,8 +143,8 @@ export default function ProcessPage() {
                 onClick={() => setActiveStageIdx(idx)}
                 className={`min-w-0 py-2.5 sm:py-3 px-1 sm:px-2 rounded-xl text-[11px] sm:text-xs font-grotesk font-bold tracking-wider transition-all duration-300 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 min-h-[44px] ${
                   isActive
-                    ? "bg-[#54227A] text-white shadow-[0_0_25px_rgba(84,34,122,0.6)] scale-100"
-                    : "text-[#F8F7F3]/70 hover:text-white hover:bg-[#3B155F]/60"
+                    ? "bg-white text-[#5B21B6] shadow-[0_0_25px_rgba(255,255,255,0.4)] scale-100"
+                    : "text-[#F8F7F3]/80 hover:text-white hover:bg-[#6D28D9]/60"
                 }`}
               >
                 <span className="font-mono text-[11px] opacity-75">{stage.number}</span>
@@ -155,36 +155,36 @@ export default function ProcessPage() {
         </div>
 
         {/* Full-Viewport Takeover Stage Card */}
-        <div className="rounded-3xl border border-[#7650A8]/25 bg-[#2A0D45] p-8 sm:p-14 lg:p-16 shadow-xl transition-all duration-700">
+        <div className="rounded-3xl border border-[#A78BFA]/30 bg-[#4C1D95]/90 p-8 sm:p-14 lg:p-16 shadow-xl backdrop-blur-md transition-all duration-700">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Oversized Typography & Narrative (Col 1-7) */}
             <div className="lg:col-span-7 space-y-8">
               <div className="space-y-3">
-                <span className="font-mono text-xs text-[#7650A8] uppercase tracking-widest font-bold block">
+                <span className="font-mono text-xs text-[#DDD6FE] uppercase tracking-widest font-bold block">
                   PHASE {currentStage.number} // {currentStage.subtitle}
                 </span>
                 <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black text-[#FFFFFF] tracking-tight leading-[0.92]">
                   {currentStage.title}
                 </h2>
-                <p className="font-grotesk text-sm sm:text-base text-[#7650A8] italic font-medium">
+                <p className="font-grotesk text-sm sm:text-base text-[#DDD6FE] italic font-medium">
                   &ldquo;{currentStage.tagline}&rdquo;
                 </p>
               </div>
 
-              <p className="text-base sm:text-lg text-[#F8F7F3]/80 font-sans font-normal leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-[#F8F7F3]/90 font-sans font-normal leading-relaxed max-w-xl">
                 {currentStage.description}
               </p>
 
               {/* Deliverables Checklist */}
-              <div className="space-y-4 border-t border-[#7650A8]/20 pt-6">
+              <div className="space-y-4 border-t border-[#A78BFA]/20 pt-6">
                 <span className="font-mono text-xs text-[#FFFFFF] uppercase tracking-wider font-semibold block">
                   STAGE {currentStage.number} DELIVERABLES:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {currentStage.deliverables.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-xs font-grotesk text-[#F8F7F3]/80">
-                      <CheckCircle2 className="h-4 w-4 text-[#7650A8] shrink-0" />
+                    <div key={i} className="flex items-center gap-2.5 text-xs font-grotesk text-[#F8F7F3]/90">
+                      <CheckCircle2 className="h-4 w-4 text-[#DDD6FE] shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -196,7 +196,7 @@ export default function ProcessPage() {
                 {activeStageIdx > 0 && (
                   <button
                     onClick={() => setActiveStageIdx(activeStageIdx - 1)}
-                    className="rounded-full border border-[#7650A8]/30 bg-[#100817] px-6 py-3 text-xs font-grotesk text-[#F8F7F3] hover:bg-[#54227A] hover:text-white transition-colors shadow-xs"
+                    className="rounded-full border border-[#A78BFA]/30 bg-[#3B0764] px-6 py-3 text-xs font-grotesk text-[#F8F7F3] hover:bg-[#6D28D9] hover:text-white transition-colors shadow-xs"
                   >
                     &larr; PREVIOUS STAGE
                   </button>
@@ -204,7 +204,7 @@ export default function ProcessPage() {
                 {activeStageIdx < STAGES.length - 1 ? (
                   <button
                     onClick={() => setActiveStageIdx(activeStageIdx + 1)}
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#54227A] px-7 py-3 font-grotesk text-xs font-bold text-white shadow-[0_0_20px_rgba(84,34,122,0.5)] hover:bg-[#7650A8] hover:scale-105 transition-transform"
+                    className="group inline-flex items-center gap-2 rounded-full bg-white text-[#5B21B6] px-7 py-3 font-grotesk text-xs font-bold shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:bg-[#DDD6FE] hover:scale-105 transition-transform"
                   >
                     <span>NEXT STAGE</span>
                     <ChevronRight className="h-4 w-4" />
@@ -212,7 +212,7 @@ export default function ProcessPage() {
                 ) : (
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#54227A] px-7 py-3 font-grotesk text-xs font-bold text-white shadow-[0_0_25px_rgba(84,34,122,0.5)] hover:bg-[#7650A8] hover:scale-105 transition-transform"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-[#5B21B6] px-7 py-3 font-grotesk text-xs font-bold shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:bg-[#DDD6FE] hover:scale-105 transition-transform"
                   >
                     <span>START YOUR PROJECT</span>
                     <ArrowUpRight className="h-4 w-4" />
@@ -222,7 +222,7 @@ export default function ProcessPage() {
             </div>
 
             {/* Right Column: High-Impact Visual Takeover (Col 8-12) */}
-            <div className="lg:col-span-5 relative aspect-4/5 sm:aspect-16/11 lg:aspect-4/5 rounded-3xl overflow-hidden border border-[#7650A8]/30 bg-[#080509] shadow-xl">
+            <div className="lg:col-span-5 relative aspect-4/5 sm:aspect-16/11 lg:aspect-4/5 rounded-3xl overflow-hidden border border-[#A78BFA]/30 bg-[#3B0764] shadow-xl">
               <Image
                 key={currentStage.number}
                 src={currentStage.image}
@@ -231,18 +231,18 @@ export default function ProcessPage() {
                 priority
                 className="object-cover transition-transform duration-1000 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/90 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/90 via-black/20 to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
                 <div>
-                  <span className="font-mono text-xs text-[#7650A8] uppercase tracking-wider font-bold">
+                  <span className="font-mono text-xs text-[#DDD6FE] uppercase tracking-wider font-bold">
                     STAGE {currentStage.number} VISUAL
                   </span>
                   <p className="font-display text-lg font-bold text-white mt-1">
                     {currentStage.subtitle}
                   </p>
                 </div>
-                <span className="rounded-full bg-[#2A0D45]/80 border border-[#7650A8]/30 px-3 py-1 font-mono text-[11px] text-white backdrop-blur-md">
+                <span className="rounded-full bg-[#3B0764]/90 border border-[#A78BFA]/40 px-3 py-1 font-mono text-[11px] text-[#DDD6FE] backdrop-blur-md">
                   4K MASTER
                 </span>
               </div>

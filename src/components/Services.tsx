@@ -58,7 +58,7 @@ export default function Services() {
           {/* Floating Image Preview Following Cursor (Desktop Only) */}
           {hoveredIndex !== null && (
             <div
-              className="pointer-events-none absolute z-30 hidden lg:block w-80 aspect-16/10 rounded-2xl overflow-hidden border border-[#7650A8]/40 bg-[#100817]/95 shadow-[0_25px_60px_rgba(16,8,23,0.8)] transition-all duration-150 ease-out"
+              className="pointer-events-none absolute z-30 hidden lg:block w-80 aspect-16/10 rounded-2xl overflow-hidden border border-[#A78BFA]/50 bg-[#3B0764]/95 shadow-[0_25px_60px_rgba(59,7,100,0.8)] transition-all duration-150 ease-out"
               style={{
                 left: `${mousePos.x + 30}px`,
                 top: `${mousePos.y - 100}px`
@@ -70,12 +70,12 @@ export default function Services() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/90 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[#F8F7F3]">
-                <span className="font-mono text-[11px] text-[#7650A8] uppercase tracking-wider font-bold">
+                <span className="font-mono text-[11px] text-[#DDD6FE] uppercase tracking-wider font-bold">
                   {servicesData[hoveredIndex].title}
                 </span>
-                <span className="h-2 w-2 rounded-full bg-[#7650A8] animate-ping" />
+                <span className="h-2 w-2 rounded-full bg-[#DDD6FE] animate-ping" />
               </div>
             </div>
           )}
@@ -149,17 +149,17 @@ export default function Services() {
 
                 {/* Mobile-Only Expanded Image Preview */}
                 {isHovered && (
-                  <div className="mt-4 lg:hidden rounded-2xl overflow-hidden border border-[#7650A8]/30 aspect-16/9 relative shadow-lg">
+                  <div className="mt-4 lg:hidden rounded-2xl overflow-hidden border border-[#A78BFA]/30 aspect-16/9 relative shadow-lg">
                     <Image
                       src={service.previewImage}
                       alt={service.title}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#100817]/90 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3B0764]/90 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono text-white">
                       <span>{service.title}</span>
-                      <span className="text-[#7650A8] font-bold">{service.number} // 06</span>
+                      <span className="text-[#DDD6FE] font-bold">{service.number} // 06</span>
                     </div>
                   </div>
                 )}

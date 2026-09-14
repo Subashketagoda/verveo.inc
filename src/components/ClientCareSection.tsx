@@ -94,22 +94,22 @@ export default function ClientCareSection() {
   return (
     <section
       id="client-care"
-      className="relative w-full py-24 sm:py-36 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#54227A] via-[#48186E] to-[#54227A] text-[#F8F7F3] border-t border-[#7650A8]/25 overflow-hidden"
+      className="relative w-full py-24 sm:py-36 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#5B21B6] via-[#6D28D9] to-[#5B21B6] text-white border-t border-[#A78BFA]/30 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto space-y-10 sm:space-y-12">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-[#7650A8]/20 pb-8 gap-6 sm:gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-[#A78BFA]/25 pb-8 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">06.5 // CLIENT GUARDIANSHIP</span>
-              <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.25em] text-[#F8F7F3]/60 uppercase">
+              <span className="font-mono text-xs text-[#DDD6FE] font-bold">06.5 // CLIENT GUARDIANSHIP</span>
+              <span className="text-[#C4B5FD]/40">/</span>
+              <span className="text-xs font-grotesk tracking-[0.25em] text-[#EDE9FE]/80 uppercase">
                 6-Part Editorial Series
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-6xl font-black text-[#FFFFFF] tracking-tight leading-[0.96]">
+            <h2 className="font-display text-3xl sm:text-6xl font-black text-white tracking-tight leading-[0.96]">
               WE TAKE CARE OF <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7650A8] via-[#F8F7F3] to-[#7650A8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE]">
                 OUR CLIENTS.
               </span>
             </h2>
@@ -120,7 +120,7 @@ export default function ClientCareSection() {
               href="https://www.instagram.com/verveo.inc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#7650A8]/30 bg-[#2A0D45] px-5 py-3 font-grotesk text-xs font-semibold tracking-wider text-[#F8F7F3] hover:border-[#7650A8] hover:text-white hover:bg-[#54227A] transition-all min-h-[44px]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/35 bg-[#4C1D95] px-5 py-3 font-grotesk text-xs font-semibold tracking-wider text-white hover:border-[#DDD6FE] hover:bg-[#7C3AED] transition-all min-h-[44px]"
             >
               <InstagramIcon className="h-4 w-4" />
               <span>VIEW ON INSTAGRAM</span>
@@ -138,7 +138,7 @@ export default function ClientCareSection() {
         >
           {/* Main Visual Slide Display */}
           <div className="lg:col-span-7">
-            <div className="relative aspect-square sm:aspect-4/3 w-full rounded-3xl overflow-hidden border border-[#7650A8]/30 bg-[#2A0D45] shadow-xl group touch-pan-y">
+            <div className="relative aspect-square sm:aspect-4/3 w-full rounded-3xl overflow-hidden border border-[#A78BFA]/35 bg-[#4C1D95] shadow-xl group touch-pan-y">
               <Image
                 src={currentSlide.src}
                 alt={currentSlide.title}
@@ -148,14 +148,14 @@ export default function ClientCareSection() {
               />
 
               {/* Slide Counter Overlay */}
-              <div className="absolute top-4 left-4 z-10 rounded-full border border-[#7650A8]/30 bg-[#100817]/90 px-3.5 py-1 text-xs font-mono font-bold text-[#7650A8] backdrop-blur-md shadow-xs">
+              <div className="absolute top-4 left-4 z-10 rounded-full border border-[#A78BFA]/30 bg-[#3B0764]/90 px-3.5 py-1 text-xs font-mono font-bold text-[#DDD6FE] backdrop-blur-md shadow-xs">
                 {String(currentIndex + 1).padStart(2, "0")} / {String(CLIENT_CARE_SLIDES.length).padStart(2, "0")}
               </div>
 
               {/* Zoom Button */}
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#7650A8]/30 bg-[#100817]/90 text-[#F8F7F3] hover:text-white hover:bg-[#54227A] backdrop-blur-md shadow-xs transition-colors"
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#A78BFA]/30 bg-[#3B0764]/90 text-[#EDE9FE] hover:text-white hover:bg-[#7C3AED] backdrop-blur-md shadow-xs transition-colors"
                 title="View Full Size"
               >
                 <Maximize2 className="h-4 w-4" />
@@ -164,7 +164,7 @@ export default function ClientCareSection() {
               {/* Prev / Next Arrows */}
               <button
                 onClick={prevSlide}
-                className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#7650A8]/30 bg-[#100817]/90 text-[#F8F7F3] hover:bg-[#54227A] hover:text-white shadow-md backdrop-blur-md transition-all active:scale-95"
+                className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#A78BFA]/30 bg-[#3B0764]/90 text-[#EDE9FE] hover:bg-[#7C3AED] hover:text-white shadow-md backdrop-blur-md transition-all active:scale-95"
                 aria-label="Previous Slide"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -172,7 +172,7 @@ export default function ClientCareSection() {
 
               <button
                 onClick={nextSlide}
-                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#7650A8]/30 bg-[#100817]/90 text-[#F8F7F3] hover:bg-[#54227A] hover:text-white shadow-md backdrop-blur-md transition-all active:scale-95"
+                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#A78BFA]/30 bg-[#3B0764]/90 text-[#EDE9FE] hover:bg-[#7C3AED] hover:text-white shadow-md backdrop-blur-md transition-all active:scale-95"
                 aria-label="Next Slide"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -182,28 +182,28 @@ export default function ClientCareSection() {
 
           {/* Slide Narrative & Thumbnail Selector */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-3xl border border-[#7650A8]/20 bg-[#2A0D45] p-6 sm:p-8 space-y-4 shadow-lg">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#7650A8] uppercase">
+            <div className="rounded-3xl border border-[#A78BFA]/30 bg-[#4C1D95]/90 p-6 sm:p-8 space-y-4 shadow-lg">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#DDD6FE] uppercase">
                 <Sparkles className="h-3.5 w-3.5" />
                 <span>{currentSlide.subtitle}</span>
               </div>
 
-              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#FFFFFF]">
+              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white">
                 {currentSlide.title}
               </h3>
 
-              <p className="text-sm font-sans text-[#F8F7F3]/80 leading-relaxed">
+              <p className="text-sm font-sans text-[#EDE9FE]/90 leading-relaxed">
                 {currentSlide.description}
               </p>
 
               {/* Progress Dots */}
-              <div className="flex items-center gap-2 pt-4 border-t border-[#7650A8]/20">
+              <div className="flex items-center gap-2 pt-4 border-t border-[#A78BFA]/20">
                 {CLIENT_CARE_SLIDES.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     className={`h-2 rounded-full transition-all ${
-                      idx === currentIndex ? "w-8 bg-[#7650A8]" : "w-2 bg-[#100817]/60 hover:bg-[#7650A8]/40"
+                      idx === currentIndex ? "w-8 bg-[#DDD6FE]" : "w-2 bg-[#3B0764] hover:bg-[#DDD6FE]/40"
                     }`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
@@ -213,9 +213,9 @@ export default function ClientCareSection() {
 
             {/* Thumbnail Filmstrip */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-grotesk text-[#F8F7F3]/70">
-                <span className="flex items-center gap-1 font-semibold text-[#FFFFFF]">
-                  <Layers className="h-3.5 w-3.5 text-[#7650A8]" />
+              <div className="flex items-center justify-between text-xs font-grotesk text-[#EDE9FE]/80">
+                <span className="flex items-center gap-1 font-semibold text-white">
+                  <Layers className="h-3.5 w-3.5 text-[#DDD6FE]" />
                   <span>ALL 6 SLIDES IN THIS SET</span>
                 </span>
                 <span>Click to view</span>
@@ -228,8 +228,8 @@ export default function ClientCareSection() {
                     onClick={() => setCurrentIndex(idx)}
                     className={`relative aspect-square rounded-xl overflow-hidden border transition-all ${
                       idx === currentIndex
-                        ? "border-[#7650A8] ring-2 ring-[#7650A8]/50 scale-105"
-                        : "border-[#7650A8]/20 opacity-70 hover:opacity-100"
+                        ? "border-[#DDD6FE] ring-2 ring-[#C4B5FD]/50 scale-105"
+                        : "border-[#A78BFA]/30 opacity-70 hover:opacity-100"
                     }`}
                   >
                     <Image
@@ -249,20 +249,20 @@ export default function ClientCareSection() {
       {/* Full Size Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#080509]/90 p-4 sm:p-8 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 sm:p-8 backdrop-blur-md"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[90vh] bg-[#2A0D45] border border-[#7650A8]/30 rounded-3xl p-4 sm:p-6 shadow-2xl flex flex-col items-center text-[#F8F7F3]"
+            className="relative max-w-4xl w-full max-h-[90vh] bg-[#4C1D95] border border-[#A78BFA]/40 rounded-3xl p-4 sm:p-6 shadow-2xl flex flex-col items-center text-white"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-full flex items-center justify-between pb-4 border-b border-[#7650A8]/20">
-              <span className="font-display text-sm sm:text-base font-bold text-[#FFFFFF]">
+            <div className="w-full flex items-center justify-between pb-4 border-b border-[#A78BFA]/25">
+              <span className="font-display text-sm sm:text-base font-bold text-white">
                 {currentSlide.title} ({currentIndex + 1} / {CLIENT_CARE_SLIDES.length})
               </span>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="h-10 w-10 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-full bg-[#100817] text-[#F8F7F3] hover:bg-[#54227A] hover:text-white transition-colors border border-[#7650A8]/30"
+                className="h-10 w-10 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-full bg-[#3B0764] text-white hover:bg-[#7C3AED] hover:text-white transition-colors border border-[#A78BFA]/30"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
@@ -281,13 +281,13 @@ export default function ClientCareSection() {
             <div className="flex items-center gap-4">
               <button
                 onClick={prevSlide}
-                className="px-4 py-2 rounded-full border border-[#7650A8]/30 bg-[#100817] text-xs font-mono font-bold text-[#F8F7F3] hover:bg-[#54227A] hover:text-white transition-colors"
+                className="px-4 py-2 rounded-full border border-[#A78BFA]/30 bg-[#3B0764] text-xs font-mono font-bold text-white hover:bg-[#7C3AED] transition-colors"
               >
                 PREVIOUS
               </button>
               <button
                 onClick={nextSlide}
-                className="px-4 py-2 rounded-full border border-[#7650A8]/30 bg-[#100817] text-xs font-mono font-bold text-[#F8F7F3] hover:bg-[#54227A] hover:text-white transition-colors"
+                className="px-4 py-2 rounded-full border border-[#A78BFA]/30 bg-[#3B0764] text-xs font-mono font-bold text-white hover:bg-[#7C3AED] transition-colors"
               >
                 NEXT
               </button>

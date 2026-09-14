@@ -61,29 +61,29 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 sm:py-36 lg:py-44 px-4 sm:px-10 lg:px-16 bg-[#2A0D45] text-[#F8F7F3] border-t border-[#7650A8]/20 overflow-hidden"
+      className="relative w-full py-24 sm:py-36 lg:py-44 px-4 sm:px-10 lg:px-16 bg-gradient-to-b from-[#5B21B6] via-[#6D28D9] to-[#5B21B6] text-white border-t border-[#A78BFA]/30 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-[#7650A8]/20 pb-8 mb-12 sm:mb-16 gap-6 sm:gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-[#A78BFA]/25 pb-8 mb-12 sm:mb-16 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs text-[#7650A8] font-bold">08 // INITIATE DIALOGUE</span>
-              <span className="text-[#7650A8]/40">/</span>
-              <span className="text-xs font-grotesk tracking-[0.25em] text-[#F8F7F3]/60 uppercase">
+              <span className="font-mono text-xs text-[#DDD6FE] font-bold">08 // INITIATE DIALOGUE</span>
+              <span className="text-[#C4B5FD]/40">/</span>
+              <span className="text-xs font-grotesk tracking-[0.25em] text-[#EDE9FE]/80 uppercase">
                 Project Inquiries
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-6xl lg:text-7xl font-black text-[#FFFFFF] tracking-tight leading-[0.95]">
+            <h2 className="font-display text-3xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.95]">
               HAVE AN IDEA? <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7650A8] via-[#F8F7F3] to-[#7650A8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#EDE9FE] to-[#DDD6FE]">
                 LET&apos;S TALK.
               </span>
             </h2>
           </div>
 
           <div className="max-w-md">
-            <p className="text-sm font-sans text-[#F8F7F3]/70 leading-relaxed font-normal">
+            <p className="text-sm font-sans text-[#EDE9FE]/85 leading-relaxed font-normal">
               We respond to all verified project commissions within 24 hours. Tell us about your vision, brand objectives, or creative requirements.
             </p>
           </div>
@@ -94,15 +94,15 @@ export default function ContactSection() {
           {/* Form Column (7 Cols) */}
           <div className="lg:col-span-7">
             {isSubmitted ? (
-              <div className="rounded-3xl border border-[#7650A8]/40 bg-[#100817] p-8 sm:p-14 text-center space-y-6 shadow-xl">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#2A0D45] text-[#7650A8] border border-[#7650A8]/30">
+              <div className="rounded-3xl border border-[#A78BFA]/40 bg-[#4C1D95] p-8 sm:p-14 text-center space-y-6 shadow-xl">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#3B0764] text-[#DDD6FE] border border-[#A78BFA]/40">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="font-display text-2xl sm:text-3xl font-black text-[#FFFFFF]">
+                <h3 className="font-display text-2xl sm:text-3xl font-black text-white">
                   INQUIRY TRANSMITTED.
                 </h3>
-                <p className="text-sm text-[#F8F7F3]/80 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-[#FFFFFF]">{name}</strong>. Our creative directors have received your project details and will be in touch within 24 hours.
+                <p className="text-sm text-[#EDE9FE]/90 max-w-md mx-auto leading-relaxed">
+                  Thank you, <strong className="text-white">{name}</strong>. Our creative directors have received your project details and will be in touch within 24 hours.
                 </p>
                 <div className="pt-4">
                   <button
@@ -113,7 +113,7 @@ export default function ContactSection() {
                       setCompany("");
                       setMessage("");
                     }}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#7650A8]/30 bg-[#2A0D45] px-6 py-3 text-xs font-grotesk text-[#F8F7F3] hover:bg-[#54227A] hover:text-white transition-colors min-h-[44px]"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/30 bg-[#3B0764] px-6 py-3 text-xs font-grotesk text-white hover:bg-[#7C3AED] transition-colors min-h-[44px]"
                   >
                     <span>SUBMIT ANOTHER INQUIRY</span>
                   </button>
@@ -123,7 +123,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                 {/* NAME */}
                 <div className="space-y-2">
-                  <label className="block font-mono text-xs font-semibold text-[#7650A8] uppercase tracking-wider">
+                  <label className="block font-mono text-xs font-semibold text-[#DDD6FE] uppercase tracking-wider">
                     NAME *
                   </label>
                   <input
@@ -131,16 +131,16 @@ export default function ContactSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Marcus Vance"
-                    className="w-full rounded-2xl border border-[#7650A8]/30 bg-[#100817] px-5 py-4 font-sans text-base sm:text-sm text-[#F8F7F3] placeholder-[#F8F7F3]/40 focus:border-[#7650A8] focus:outline-none focus:ring-1 focus:ring-[#7650A8] transition-all"
+                    className="w-full rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95]/70 px-5 py-4 font-sans text-base sm:text-sm text-white placeholder-[#EDE9FE]/50 focus:border-[#DDD6FE] focus:outline-none focus:ring-1 focus:ring-[#C4B5FD] transition-all"
                   />
                   {errors.name && (
-                    <p className="text-xs text-[#7650A8] font-mono font-semibold">{errors.name}</p>
+                    <p className="text-xs text-[#DDD6FE] font-mono font-semibold">{errors.name}</p>
                   )}
                 </div>
 
                 {/* EMAIL */}
                 <div className="space-y-2">
-                  <label className="block font-mono text-xs font-semibold text-[#7650A8] uppercase tracking-wider">
+                  <label className="block font-mono text-xs font-semibold text-[#DDD6FE] uppercase tracking-wider">
                     EMAIL *
                   </label>
                   <input
@@ -148,16 +148,16 @@ export default function ContactSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="e.g. marcus@brand.com"
-                    className="w-full rounded-2xl border border-[#7650A8]/30 bg-[#100817] px-5 py-4 font-sans text-base sm:text-sm text-[#F8F7F3] placeholder-[#F8F7F3]/40 focus:border-[#7650A8] focus:outline-none focus:ring-1 focus:ring-[#7650A8] transition-all"
+                    className="w-full rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95]/70 px-5 py-4 font-sans text-base sm:text-sm text-white placeholder-[#EDE9FE]/50 focus:border-[#DDD6FE] focus:outline-none focus:ring-1 focus:ring-[#C4B5FD] transition-all"
                   />
                   {errors.email && (
-                    <p className="text-xs text-[#7650A8] font-mono font-semibold">{errors.email}</p>
+                    <p className="text-xs text-[#DDD6FE] font-mono font-semibold">{errors.email}</p>
                   )}
                 </div>
 
                 {/* BRAND / COMPANY */}
                 <div className="space-y-2">
-                  <label className="block font-mono text-xs font-semibold text-[#7650A8] uppercase tracking-wider">
+                  <label className="block font-mono text-xs font-semibold text-[#DDD6FE] uppercase tracking-wider">
                     BRAND / COMPANY
                   </label>
                   <input
@@ -165,13 +165,13 @@ export default function ContactSection() {
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     placeholder="e.g. ALATA Artisanal Cafe"
-                    className="w-full rounded-2xl border border-[#7650A8]/30 bg-[#100817] px-5 py-4 font-sans text-base sm:text-sm text-[#F8F7F3] placeholder-[#F8F7F3]/40 focus:border-[#7650A8] focus:outline-none focus:ring-1 focus:ring-[#7650A8] transition-all"
+                    className="w-full rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95]/70 px-5 py-4 font-sans text-base sm:text-sm text-white placeholder-[#EDE9FE]/50 focus:border-[#DDD6FE] focus:outline-none focus:ring-1 focus:ring-[#C4B5FD] transition-all"
                   />
                 </div>
 
                 {/* PROJECT TYPE */}
                 <div className="space-y-3">
-                  <label className="block font-mono text-xs font-semibold text-[#7650A8] uppercase tracking-wider">
+                  <label className="block font-mono text-xs font-semibold text-[#DDD6FE] uppercase tracking-wider">
                     PROJECT TYPE
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -182,8 +182,8 @@ export default function ContactSection() {
                         onClick={() => setSelectedType(type)}
                         className={`text-left rounded-xl p-3.5 text-xs font-grotesk font-semibold tracking-wider transition-all duration-200 min-h-[44px] ${
                           selectedType === type
-                            ? "border border-[#7650A8] bg-[#54227A] text-white shadow-xs"
-                            : "border border-[#7650A8]/20 bg-[#100817] text-[#F8F7F3]/70 hover:border-[#7650A8]/50 hover:text-white"
+                            ? "border border-[#DDD6FE] bg-[#7C3AED] text-white shadow-xs"
+                            : "border border-[#A78BFA]/30 bg-[#4C1D95]/70 text-[#EDE9FE] hover:border-[#DDD6FE] hover:text-white"
                         }`}
                       >
                         {type}
@@ -194,7 +194,7 @@ export default function ContactSection() {
 
                 {/* MESSAGE */}
                 <div className="space-y-2">
-                  <label className="block font-mono text-xs font-semibold text-[#7650A8] uppercase tracking-wider">
+                  <label className="block font-mono text-xs font-semibold text-[#DDD6FE] uppercase tracking-wider">
                     MESSAGE *
                   </label>
                   <textarea
@@ -202,10 +202,10 @@ export default function ContactSection() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell us about the project vision, timeline, target deliverables, or goals..."
-                    className="w-full rounded-2xl border border-[#7650A8]/30 bg-[#100817] px-5 py-4 font-sans text-base sm:text-sm text-[#F8F7F3] placeholder-[#F8F7F3]/40 focus:border-[#7650A8] focus:outline-none focus:ring-1 focus:ring-[#7650A8] transition-all"
+                    className="w-full rounded-2xl border border-[#A78BFA]/35 bg-[#4C1D95]/70 px-5 py-4 font-sans text-base sm:text-sm text-white placeholder-[#EDE9FE]/50 focus:border-[#DDD6FE] focus:outline-none focus:ring-1 focus:ring-[#C4B5FD] transition-all"
                   />
                   {errors.message && (
-                    <p className="text-xs text-[#7650A8] font-mono font-semibold">{errors.message}</p>
+                    <p className="text-xs text-[#DDD6FE] font-mono font-semibold">{errors.message}</p>
                   )}
                 </div>
 
@@ -213,7 +213,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-[#54227A] px-10 py-4 font-grotesk text-sm font-bold tracking-wider text-white shadow-[0_0_35px_rgba(84,34,122,0.5)] transition-all duration-300 hover:bg-[#7650A8] hover:scale-105 active:scale-95 disabled:opacity-50 min-h-[48px]"
+                  className="group relative flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-white px-10 py-4 font-grotesk text-sm font-bold tracking-wider text-[#5B21B6] shadow-[0_0_35px_rgba(124,58,237,0.5)] transition-all duration-300 hover:bg-[#EDE9FE] hover:scale-105 active:scale-95 disabled:opacity-50 min-h-[48px]"
                 >
                   <span>{isSubmitting ? "TRANSMITTING..." : "SEND INQUIRY"}</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -223,19 +223,19 @@ export default function ContactSection() {
           </div>
 
           {/* Studio Contact Info (5 Cols) */}
-          <div className="lg:col-span-5 space-y-8 rounded-3xl border border-[#7650A8]/20 bg-[#100817] p-8 sm:p-10 shadow-lg">
+          <div className="lg:col-span-5 space-y-8 rounded-3xl border border-[#A78BFA]/35 bg-[#4C1D95]/90 p-8 sm:p-10 shadow-lg">
             <div>
-              <span className="font-mono text-xs text-[#7650A8] uppercase tracking-widest font-bold">
+              <span className="font-mono text-xs text-[#DDD6FE] uppercase tracking-widest font-bold">
                 COMMISSION DETAILS
               </span>
-              <h3 className="font-display text-2xl font-bold text-[#FFFFFF] mt-1">
+              <h3 className="font-display text-2xl font-bold text-white mt-1">
                 Studio Communications
               </h3>
             </div>
 
-            <div className="space-y-6 text-sm font-sans font-normal text-[#F8F7F3]/70">
+            <div className="space-y-6 text-sm font-sans font-normal text-[#EDE9FE]/85">
               <div className="space-y-1">
-                <span className="font-mono text-xs text-[#FFFFFF] uppercase tracking-wider font-semibold block">
+                <span className="font-mono text-xs text-white uppercase tracking-wider font-semibold block">
                   OFFICIAL CHANNELS
                 </span>
                 <p>Instagram: @verveo.inc</p>
@@ -243,27 +243,27 @@ export default function ContactSection() {
                 <p>Email: hello@verveocreative.com</p>
               </div>
 
-              <div className="space-y-1 border-t border-[#7650A8]/20 pt-4">
-                <span className="font-mono text-xs text-[#FFFFFF] uppercase tracking-wider font-semibold block">
+              <div className="space-y-1 border-t border-[#A78BFA]/20 pt-4">
+                <span className="font-mono text-xs text-white uppercase tracking-wider font-semibold block">
                   CAPABILITIES
                 </span>
                 <p>Brand Identity &bull; Campaign Creation &bull; Fashion Lookbooks &bull; Food Cinema &bull; 35mm Wedding Cinema</p>
               </div>
 
-              <div className="space-y-1 border-t border-[#7650A8]/20 pt-4">
-                <span className="font-mono text-xs text-[#FFFFFF] uppercase tracking-wider font-semibold block">
+              <div className="space-y-1 border-t border-[#A78BFA]/20 pt-4">
+                <span className="font-mono text-xs text-white uppercase tracking-wider font-semibold block">
                   RESPONSE PROTOCOL
                 </span>
                 <p>All inquiries reviewed directly by principal creative direction within 24 business hours.</p>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-[#7650A8]/20">
+            <div className="pt-4 border-t border-[#A78BFA]/20">
               <a
                 href="https://www.instagram.com/verveo.inc/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#7650A8]/30 bg-[#2A0D45] px-5 py-2.5 text-xs font-grotesk text-[#F8F7F3] hover:border-[#7650A8] hover:text-white hover:bg-[#54227A] transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 rounded-full border border-[#A78BFA]/30 bg-[#3B0764] px-5 py-2.5 text-xs font-grotesk text-[#EDE9FE] hover:border-[#DDD6FE] hover:text-white hover:bg-[#7C3AED] transition-colors shadow-xs"
               >
                 <InstagramIcon className="h-4 w-4" />
                 <span>DM US ON INSTAGRAM ↗</span>

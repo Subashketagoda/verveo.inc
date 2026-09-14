@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --verveo-deep: #54227A;
-  --verveo-darker: #431966;
-  --verveo-vibrant: #6D28D9;
+  --verveo-deep: #6D28D9;
+  --verveo-darker: #5B21B6;
+  --verveo-vibrant: #7C3AED;
   --verveo-violet: #8B5CF6;
+  --verveo-light-violet: #A78BFA;
   --verveo-warm-white: #F8F7F3;
   --verveo-white: #FFFFFF;
-  --verveo-near-black: #200A33;
-  --verveo-deep-black: #160724;
+  --verveo-near-black: #3B0764;
+  --verveo-deep-black: #2E0854;
 
-  --background: #200A33;
+  --background: #5B21B6;
   --foreground: #F8F7F3;
   --font-display: var(--font-display), 'Syne', sans-serif;
   --font-grotesk: var(--font-grotesk), 'Space Grotesk', sans-serif;
@@ -40,7 +41,7 @@ body {
 }
 
 ::selection {
-  background-color: #54227A;
+  background-color: #7C3AED;
   color: #FFFFFF;
 }
 
@@ -59,19 +60,19 @@ body {
 
 /* Glassmorphism & Borders with Verveo Purple Hues */
 .glass-panel {
-  background: rgba(42, 13, 69, 0.75);
+  background: rgba(91, 33, 182, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(118, 80, 168, 0.2);
+  border: 1px solid rgba(167, 139, 250, 0.25);
 }
 
 .glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(59, 21, 95, 0.85);
-  border-color: rgba(118, 80, 168, 0.5);
-  box-shadow: 0 10px 30px -10px rgba(84, 34, 122, 0.4);
+  background: rgba(109, 40, 217, 0.85);
+  border-color: rgba(196, 181, 253, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.4);
 }
 
 /* Film Grain Texture */
@@ -82,15 +83,15 @@ body {
 
 /* Verveo Signature Purple Glows */
 .glow-verveo {
-  box-shadow: 0 0 35px rgba(84, 34, 122, 0.45);
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.45);
 }
 
 .glow-violet {
-  box-shadow: 0 0 50px rgba(118, 80, 168, 0.3);
+  box-shadow: 0 0 50px rgba(167, 139, 250, 0.35);
 }
 
 .glow-subtle {
-  box-shadow: 0 0 40px rgba(59, 21, 95, 0.2);
+  box-shadow: 0 0 40px rgba(109, 40, 217, 0.25);
 }
 
 /* Custom Scrollbar in Verveo Hues */
@@ -98,14 +99,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #100817;
+  background: #3B0764;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3B155F;
+  background: #7C3AED;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7650A8;
+  background: #A78BFA;
 }
 
 /* Keyframes */
