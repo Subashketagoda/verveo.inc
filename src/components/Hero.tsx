@@ -94,32 +94,70 @@ export default function Hero() {
       {/* Background Architectural & Luminous Violet Glow on Rich Royal Purple */}
       <div className="absolute inset-0 -z-20 overflow-hidden bg-gradient-to-b from-[#4C1D95] via-[#6D28D9] to-[#3B0764]">
         {/* Radiant Royal Purple Overhead Spotlight */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_70%_at_50%_-15%,rgba(167,139,250,0.5)_0%,rgba(124,58,237,0.3)_45%,rgba(59,7,100,0.8)_85%,transparent_100%)] opacity-95" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_70%_at_50%_-15%,rgba(167,139,250,0.55)_0%,rgba(124,58,237,0.35)_45%,rgba(59,7,100,0.85)_85%,transparent_100%)] opacity-95" />
 
-        {/* Central Ambient Aura */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[900px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(196,181,253,0.18)_0%,rgba(124,58,237,0.1)_45%,transparent_75%)] pointer-events-none" />
+        {/* Central Ambient Deep Violet Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[650px] w-[950px] max-w-full rounded-full bg-[radial-gradient(ellipse_at_center,rgba(196,181,253,0.22)_0%,rgba(124,58,237,0.12)_45%,transparent_75%)] pointer-events-none" />
+
+        {/* Dynamic 360-degree Sweeping Light Beam (Architectural Luxury Ray) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[1200px] w-[1200px] rounded-full pointer-events-none opacity-25 animate-beam-sweep bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(237,233,254,0.4)_45deg,transparent_90deg,transparent_180deg,rgba(196,181,253,0.3)_225deg,transparent_270deg)]" />
 
         {/* Subtle Luxury Architectural Grid with Soft Vignette Mask */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_40%,transparent_100%)] opacity-80 pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_30%,transparent_100%)] opacity-75 pointer-events-none" />
 
-        {/* Floating Ambient Light Corona 1 (Top Right) */}
+        {/* Animated Aurora Light Orb 1 (Top Left) */}
         <div
-          className="absolute -top-16 -right-16 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(237,233,254,0.32)_0%,rgba(167,139,250,0.22)_40%,rgba(109,40,217,0.1)_65%,transparent_80%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -top-24 -left-20 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.38)_0%,rgba(124,58,237,0.22)_40%,transparent_75%)] pointer-events-none animate-aurora transition-transform duration-700 ease-out"
           style={{
             transform: `translate3d(${mousePos.x * 35}px, ${mousePos.y * 35}px, 0)`
           }}
         />
 
-        {/* Floating Ambient Light Corona 2 (Bottom Left) */}
+        {/* Animated Aurora Light Orb 2 (Top Right) */}
         <div
-          className="absolute -bottom-20 -left-16 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(221,214,254,0.28)_0%,rgba(139,92,246,0.18)_45%,transparent_75%)] pointer-events-none transition-transform duration-700 ease-out"
+          className="absolute -top-20 -right-20 h-[580px] w-[580px] rounded-full bg-[radial-gradient(circle,rgba(237,233,254,0.4)_0%,rgba(196,181,253,0.28)_35%,rgba(109,40,217,0.15)_65%,transparent_80%)] pointer-events-none animate-aurora-reverse transition-transform duration-700 ease-out"
           style={{
-            transform: `translate3d(${mousePos.x * -25}px, ${mousePos.y * -25}px, 0)`
+            transform: `translate3d(${mousePos.x * -28}px, ${mousePos.y * -28}px, 0)`
           }}
         />
 
-        {/* Subtle Horizontal Light Horizon Accent */}
-        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C4B5FD]/20 to-transparent pointer-events-none" />
+        {/* Animated Aurora Light Orb 3 (Bottom Center Left) */}
+        <div className="absolute -bottom-28 left-1/4 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(221,214,254,0.3)_0%,rgba(139,92,246,0.18)_45%,transparent_75%)] pointer-events-none animate-aurora" />
+
+        {/* Floating Twinkling Star Sparks (4-Point SVG Crystals) */}
+        <div className="absolute top-[16%] left-[8%] pointer-events-none animate-twinkle">
+          <svg className="h-4 w-4 text-[#DDD6FE] drop-shadow-[0_0_8px_rgba(221,214,254,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-[26%] right-[12%] pointer-events-none animate-twinkle" style={{ animationDelay: "1.4s" }}>
+          <svg className="h-5 w-5 text-[#FFFFFF] drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-[68%] left-[6%] pointer-events-none animate-twinkle" style={{ animationDelay: "2.6s" }}>
+          <svg className="h-3.5 w-3.5 text-[#DDD6FE] drop-shadow-[0_0_6px_rgba(221,214,254,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+          </svg>
+        </div>
+
+        <div className="absolute top-[76%] right-[20%] pointer-events-none animate-twinkle" style={{ animationDelay: "1.9s" }}>
+          <svg className="h-4 w-4 text-[#DDD6FE] drop-shadow-[0_0_8px_rgba(221,214,254,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+          </svg>
+        </div>
+
+        {/* Micro Stardust Glowing Orbs */}
+        <div className="absolute top-[22%] left-[24%] h-1.5 w-1.5 rounded-full bg-[#DDD6FE] shadow-[0_0_8px_#DDD6FE] pointer-events-none animate-pulse" />
+        <div className="absolute top-[46%] right-[6%] h-1 w-1 rounded-full bg-white shadow-[0_0_6px_#ffffff] pointer-events-none animate-pulse" style={{ animationDelay: "0.8s" }} />
+        <div className="absolute top-[82%] left-[34%] h-1.5 w-1.5 rounded-full bg-[#DDD6FE] shadow-[0_0_8px_#DDD6FE] pointer-events-none animate-pulse" style={{ animationDelay: "1.6s" }} />
+
+        {/* Subtle Horizontal Laser Horizon with Glowing Beacon */}
+        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C4B5FD]/30 to-transparent pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#DDD6FE] shadow-[0_0_12px_#DDD6FE] animate-pulse" />
+        </div>
       </div>
 
       {/* Top Telemetry Strip */}
